@@ -1,4 +1,4 @@
-package com.ep2_oo.pedroigor.pokedex;
+package com.ep02_oo.pedroigor.pokedex;
 
 import org.junit.Test;
 
