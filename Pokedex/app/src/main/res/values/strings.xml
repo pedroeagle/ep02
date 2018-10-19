@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Pokédex</string>
+    <string name="pok_dex">Pokédex</string>
+    <string name="button">Button</string>
+</resources>
