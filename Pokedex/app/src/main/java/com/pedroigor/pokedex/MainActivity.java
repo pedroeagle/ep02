@@ -1,6 +1,5 @@
 package com.pedroigor.pokedex;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -10,31 +9,21 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private ListView typesList;
     private NavigationView typesButton;
-    private MyTask task;
-    private String urlApi;
+    private String urlNames;
+    private String urlTypes;
     public String resultado = "";
     public TextView teste;
+
 
 
     @Override
@@ -52,9 +41,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
-
+        /*Task task = new Task();
+        TextView teste = findViewById(R.id.text);
+        teste.setText(task.getTypes()[5]);*/
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.content_main, new Home());
@@ -103,9 +92,6 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             fragment = new Home();
         } else if (id == R.id.nav_types) {
-            task = new MyTask();
-            urlApi = "https://pokeapi.co/api/v2/type/";
-            task.execute(urlApi);
             fragment = new Types();
         } else if (id == R.id.nav_slideshow) {
 
@@ -124,77 +110,5 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    class MyTask extends AsyncTask<String, Integer, String>{
-
-        @Override
-        protected String doInBackground(String... strings) {
-            String stringUrl = strings[0];
-            InputStream inputStream = null;
-
-            try {
-                URL url = new URL(stringUrl);
-                HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
-                inputStream = conexao.getInputStream();
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-            BufferedReader reader = new BufferedReader(inputStreamReader);
-            StringBuffer buffer = null;
-            buffer = new StringBuffer();
-            String linha = "";
-
-            while (true){
-                try {
-                    linha = reader.readLine();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                if(linha == null){
-                    break;
-                }
-                else{
-                    buffer.append(linha);
-                    continue;
-                }
-            }
-            return buffer.toString();
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            String results = null;
-            JSONObject names;
-            String types = null;
-            if(urlApi == "\"https://pokeapi.co/api/v2/\""){
-                try {
-                    JSONObject api = new JSONObject(s);//objeto da api principal
-                    results = api.getString("results");
-                    JSONArray nameUrl = new JSONArray(results);
-
-                    /*for(int i = 0; i < api.getInt("count"); i++) {
-                        results = nameUrl.getString(i);
-                        JSONObject name = new JSONObject(results);
-                        results = name.getString("name");
-                        /*if (api.getInt("count") == 20) {
-                            listTypes.add(results);
-                        }
-                        else {
-                            listNames.add(results);
-                        }
-                    }*/
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-            teste = findViewById(R.id.outroteste);
-            teste.setText(results);
-        }
     }
 }
