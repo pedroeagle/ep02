@@ -9,3 +9,7 @@
 /build
 /captures
 .externalNativeBuild
+/.metadata/
+/Pokedex/nbproject/private/
+/.recommenders/
+/Pokedex/build/
