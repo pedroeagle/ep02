@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="view.Login">
-  <grid id="27dc6" binding="panelLogin" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
+  <grid id="27dc6" binding="loginPanel" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
     <margin top="50" left="50" bottom="50" right="50"/>
     <constraints>
       <xy x="264" y="280" width="427" height="284"/>
@@ -13,19 +13,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <component id="22653" class="javax.swing.JTextField" binding="userTextBox">
-        <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties>
-          <horizontalAlignment value="10"/>
-          <text value=""/>
-          <toolTipText value=""/>
-        </properties>
-      </component>
-      <component id="84ee8" class="javax.swing.JPasswordField" binding="passwordLogin">
+      <component id="84ee8" class="javax.swing.JPasswordField" binding="loginPassword">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -73,6 +61,19 @@
           </grid>
         </constraints>
       </vspacer>
+      <component id="22653" class="javax.swing.JTextField" binding="userTextBox">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="10"/>
+          <margin top="2" left="5" bottom="2" right="5"/>
+          <text value=""/>
+          <toolTipText value=""/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

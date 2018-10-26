@@ -1,36 +1,35 @@
 package model;
 
-import com.sun.xml.internal.ws.util.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
-
-public class Types extends Pokedex{
+public class Pokemon {
     private String conteudoDaApi;
     private StringBuffer aux;
+    private ArrayList<String> pokemonAbilities;
+    private ArrayList<String> pokemonAbilitiesUrl;
 
-    public Object []getNameTypes(){
-        return nameTypes;
+    public String getPokemonName(int index) {
+        return pokemonName.get(index);
+    }
+    public String getPokemonUrl(int index) {
+        return pokemonUrl.get(index);
     }
 
-    public String getUrlTypes(int index) {
-        return urlTypes.get(index);
-    }
-
-    Object []nameTypes = new String[20];
-    ArrayList <String> urlTypes = new ArrayList<>();
+    ArrayList<String> pokemonName = new ArrayList<>();
+    ArrayList<String> pokemonUrl = new ArrayList<>();
 
     {
         aux = new StringBuffer();
     }
 
-    public Types(String urlApi) throws IOException{
+    Pokemon(String urlApi) throws IOException {
         this.conteudoDaApi = conteudoDaApi;
         URL api = new URL(urlApi);
         HttpURLConnection conexao = (HttpURLConnection) api.openConnection();
@@ -38,12 +37,11 @@ public class Types extends Pokedex{
         conexao.setConnectTimeout(15000);
         conexao.connect();
         int codigoDeResposta = conexao.getResponseCode();
-        if(codigoDeResposta != 200) {
-            throw new RuntimeException("HttpResponseCode: "+codigoDeResposta);
-        }
-        else {
+        if (codigoDeResposta != 200) {
+            throw new RuntimeException("HttpResponseCode: " + codigoDeResposta);
+        } else {
             Scanner infoApi = new Scanner(api.openStream());
-            while(infoApi.hasNext()){
+            while (infoApi.hasNext()) {
                 aux.append(infoApi.nextLine());
             }
             conteudoDaApi = aux.toString();
@@ -51,12 +49,14 @@ public class Types extends Pokedex{
             JSONArray types;
             types = results.getJSONArray("results");
             JSONObject nameObject = new JSONObject();
-            for(int i = 0; i < types.length(); i++) {
+            for (int i = 0; i < types.length(); i++) {
                 nameObject = types.getJSONObject(i);
-                nameTypes[i] = nameObject.getString("name");
-                urlTypes.add(nameObject.getString("url"));
+                pokemonName.add(nameObject.getString("name"));
+                pokemonUrl.add(nameObject.getString("url"));
             }
             infoApi.close();
         }
     }
+
+
 }

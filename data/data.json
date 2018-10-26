@@ -1,0 +1,17 @@
+{
+   "count": 0,
+   "users": [
+   		{
+         "name": "Pedro Igor",
+         "pass": "12345",
+         "pokemons": "pikachu",
+         "experience": "64"
+      },
+      {
+         "name": "Outro Nome",
+         "pass": "12345",
+         "pokemons": "pikachu",
+         "experience": "64"
+      }
+   ]
+}
