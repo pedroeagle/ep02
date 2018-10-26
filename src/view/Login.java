@@ -1,11 +1,13 @@
 package view;
 
 import model.Pokedex;
+import model.Types;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class Login extends JFrame{
     String usuario;
@@ -17,18 +19,30 @@ public class Login extends JFrame{
     private JButton registerButton;
 
     public Login() {
+
         loginButton.addActionListener(new ActionListener() {
+            Types types;
+            {
+                try {
+                    types = new Types("https://pokeapi.co/api/v2/type/");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                TypesList typesList = new TypesList();
-                JFrame typesPanel = new JFrame("Types");
-                typesPanel.setContentPane(new TypesList().typesPanel);
-                typesPanel.setLocationRelativeTo(null);
-                typesPanel.getContentPane().add(typesList.typesScroll, BorderLayout.CENTER);
-                typesList.typesScroll.setPreferredSize(new Dimension(250, 250));
-                typesPanel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                typesPanel.pack();
-                typesPanel.setVisible(true);
+                Main main = new Main();
+                JFrame mainTab = new JFrame("Pokédex");
+                JFrame typesTab = new JFrame();
+                main.typesList = new JList(types.getNameTypes());
+                main.typesScroll = new JScrollPane(main.typesList);
+                mainTab.setContentPane(new Main().tabbedPanel);
+                mainTab.setLocationRelativeTo(null);
+                mainTab.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                mainTab.getContentPane().gadd(main.typesScroll);
+                main.typesScroll.setPreferredSize(new Dimension(250, 80));
+                mainTab.pack();
+                mainTab.setVisible(true);
             }
         });
     }

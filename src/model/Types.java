@@ -1,8 +1,11 @@
 package model;
 
-import com.sun.xml.internal.ws.util.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import view.Login;
+import view.Main;
+
+import javax.swing.*;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -15,7 +18,7 @@ public class Types extends Pokedex{
     private String conteudoDaApi;
     private StringBuffer aux;
 
-    public Object []getNameTypes(){
+    public Object[] getNameTypes(){
         return nameTypes;
     }
 
