@@ -30,7 +30,7 @@ public class User {
     String userPass;
     StringBuilder conteudoDaApi = new StringBuilder();
     JSONObject usersApi;
-    User(String name, String password){
+    public User(String name, String password){
         /*try (FileReader data = new FileReader("data/data.json")) {
             JSONParser parser = new JSONParser();
             usersApi = (JSONObject) parser.parse(data);

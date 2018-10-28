@@ -17,7 +17,9 @@
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="5" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font/>
+        </properties>
       </component>
       <component id="72e17" class="javax.swing.JScrollPane" binding="typesScroll">
         <constraints>

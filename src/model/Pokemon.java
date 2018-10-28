@@ -29,7 +29,7 @@ public class Pokemon {
         aux = new StringBuffer();
     }
 
-    Pokemon(String urlApi) throws IOException {
+    public Pokemon(String urlApi) throws IOException {
         this.conteudoDaApi = conteudoDaApi;
         URL api = new URL(urlApi);
         HttpURLConnection conexao = (HttpURLConnection) api.openConnection();
