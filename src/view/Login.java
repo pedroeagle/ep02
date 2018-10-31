@@ -1,7 +1,5 @@
 package view;
 
-import model.Pokedex;
-import model.Types;
 import model.User;
 
 import javax.swing.*;
@@ -28,7 +26,7 @@ public class Login{
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                new Main();
+                new MainMenu();
                 login.dispose();
             }
         });

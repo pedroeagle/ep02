@@ -2,10 +2,7 @@ package model;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import view.Login;
-import view.Main;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
