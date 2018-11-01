@@ -22,6 +22,11 @@ public class Pokedex {
 
     private String name;
     private int experience;
+
+    public int getExperience() {
+        return experience;
+    }
+
     public static ArrayList<Pokemon> allPokemons = new ArrayList<Pokemon>();
     public static void main(String[] args) {
         System.out.println("Program started!");
@@ -36,6 +41,5 @@ public class Pokedex {
             pokemons = new Pokemon();
         }
         new Login();
-
     }
 }

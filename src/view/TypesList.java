@@ -15,8 +15,9 @@ public class TypesList extends JFrame{
     public JList typesList;
     public JScrollPane typesScroll;
     public JPanel typesPanel = new JPanel();
+    public static Types types = new Types();
     public TypesList() {
-        Types types = new Types();
+
         JFrame typesFrame = new JFrame("Pokédex - Types");
         typesList = new JList(types.getNameTypes());
         typesScroll = new JScrollPane(typesList);

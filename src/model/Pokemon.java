@@ -1,5 +1,6 @@
 package model;
 
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -7,6 +8,58 @@ import java.io.IOException;
 public class Pokemon extends Pokedex{
     private void setPokemonType1(String pokemonType1) {
         this.pokemonType1 = pokemonType1;
+    }
+
+    public String getLegendary() {
+        return legendary;
+    }
+
+    public String getAbility1() {
+        return ability1;
+    }
+
+    public String getAbility2() {
+        return ability2;
+    }
+
+    public String getAbility3() {
+        return ability3;
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public int getAtack() {
+        return atack;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public int getSpAtk() {
+        return spAtk;
+    }
+
+    public int getSpDef() {
+        return spDef;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public int getGeneration() {
+        return generation;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWeight() {
+        return weight;
     }
 
     private void setPokemonType2(String pokemonType2) {
@@ -67,6 +120,7 @@ public class Pokemon extends Pokedex{
     //atributos dos pokemons
     private String pokemonType1, pokemonType2, legendary, ability1, ability2, ability3;
     private int hp, atack, defense, spAtk, spDef, speed, generation, height, weight;
+    private ImageIcon pokemonImage;
 
     public String getPokemonType1() {
         return pokemonType1;
@@ -76,6 +130,13 @@ public class Pokemon extends Pokedex{
         return pokemonType2;
     }
 
+    public ImageIcon getPokemonImage() {
+        return pokemonImage;
+    }
+
+    public void setPokemonImage(String path) {
+        pokemonImage = new ImageIcon(path);
+    }
     public Pokemon() {
     }
 
@@ -92,6 +153,7 @@ public class Pokemon extends Pokedex{
         linhaAux1 = POKEMONS_DATA_1.readLine();
         String []partsAux1 = linhaAux1.split(",");
         setName(partsAux1[1]); //método herdado da classe Pokédex
+        setPokemonImage("data/images/" + getName().toLowerCase()+".png");
         setPokemonType1(partsAux1[2]);
         setPokemonType2(partsAux1[3]);
         setHp(Integer.parseInt(partsAux1[5]));

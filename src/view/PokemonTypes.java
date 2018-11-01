@@ -4,32 +4,23 @@ import model.Pokedex;
 import model.Pokemon;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
+import java.util.ArrayList;
 import java.util.List;
+
+import static model.Pokedex.allPokemons;
 
 public class PokemonTypes extends JFrame{
     public JPanel pokemonsTypesPanel;
-    public JLabel pokemonTypesText;
-    private JList pokemonTypesList;
+    public JList pokemonTypesList;
     private JScrollPane pokemonTypesScroll;
-    Object[] names = new Object[950];
-    /*public Object[] comparePokemonTypes(String type){
-        int k = 0;
-        System.out.println(Pokedex.allPokemon.pokemonTypes[0][0]);
-        for(int i = 0; i < 950; i++){
-            for(int j = 0; j < 3;j++){
-                if(type == Pokedex.allPokemon.pokemonTypes[i][j]){
-                    names[k] = Pokedex.allPokemon.getPokemonName(i);
-                    k++;
-                    break;
-                }
-            }
-        }
-        return names;
-    }*/
     public PokemonTypes(){
 
+        pokemonTypesList.addComponentListener(new ComponentAdapter() {
+        });
         pokemonTypesList.addComponentListener(new ComponentAdapter() {
         });
     }
@@ -44,5 +35,12 @@ public class PokemonTypes extends JFrame{
         pokemonTypesScroll.setPreferredSize(new Dimension(250, 80));
         pokemonTypesFrame.pack();
         pokemonTypesFrame.setVisible(true);
+        pokemonTypesList.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent listSelectionEvent) {
+                new PokemonInfo(pokemonTypesList.getSelectedValue().toString());
+                pokemonTypesFrame.dispose();
+            }
+        });
     }
 }

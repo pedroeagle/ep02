@@ -40,16 +40,23 @@ public class Types{
         ArrayList <Object> pokemonNames = new ArrayList<Object>();
         int j = 0;
         for(int i = 0; i < 721; i++){
-            //System.out.println("Name:"+pokemons.get(i).getName());
-           // System.out.println("pokemon type1:"+pokemons.get(i).getPokemonType1());
-            //System.out.println("pokemon type2:"+pokemons.get(i).getPokemonType2());
-            //System.out.println("TYPE:"+type);
             if(type.equals(pokemons.get(i).getPokemonType1()) || type.equals(pokemons.get(i).getPokemonType2())){
                 pokemonNames.add(pokemons.get(i).getName());
-                //System.out.println("igual");
             }
         }
         return pokemonNames;
+    }
+    public Pokemon comparePokemonInfo(String name){
+        int i;
+        Pokemon pokemon = new Pokemon();
+        for(i = 0; i < 721; i++){
+            System.out.println(Pokedex.allPokemons.get(i));
+            if(Pokedex.allPokemons.get(i).equals(name)){
+                pokemon = Pokedex.allPokemons.get(i);
+                break;
+            }
+        }
+        return pokemon;
     }
     public Object[] getNameTypes() {
         return types;
