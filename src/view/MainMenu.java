@@ -1,9 +1,8 @@
 package view;
 
-import model.Pokemons;
+import model.Pokemon;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -31,11 +30,6 @@ public class MainMenu {
         buttonSearch.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                try {
-                    new Pokemons("https://pokeapi.co/api/v2/pokemon/");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         });
     }

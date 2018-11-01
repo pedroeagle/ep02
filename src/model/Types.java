@@ -3,60 +3,55 @@ package model;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.List;
 
-
-
-public class Types extends Pokedex{
-    private String conteudoDaApi;
-    private StringBuffer aux;
-
-    public Object[] getNameTypes(){
-        return nameTypes;
-    }
-
-    public String getUrlTypes(int index) {
-        return urlTypes.get(index);
-    }
-
-    Object []nameTypes = new String[20];
-    ArrayList <String> urlTypes = new ArrayList<>();
-
+public class Types{
+    String []types = new String[20];
+    private BufferedReader typesJson;
     {
-        aux = new StringBuffer();
-    }
+        try {
+            typesJson = new BufferedReader(new FileReader("data/json_files/types.json"));
+            StringBuilder aux = new StringBuilder();
 
-    public Types(String urlApi) throws IOException{
-        this.conteudoDaApi = conteudoDaApi;
-        URL api = new URL(urlApi);
-        HttpURLConnection conexao = (HttpURLConnection) api.openConnection();
-        conexao.setRequestMethod("GET");
-        conexao.setConnectTimeout(15000);
-        conexao.connect();
-        int codigoDeResposta = conexao.getResponseCode();
-        if(codigoDeResposta != 200) {
-            throw new RuntimeException("HttpResponseCode: "+codigoDeResposta);
-        }
-        else {
-            Scanner infoApi = new Scanner(api.openStream());
-            while(infoApi.hasNext()){
-                aux.append(infoApi.nextLine());
+            while(typesJson.ready()){
+                aux.append(typesJson.readLine());
             }
-            conteudoDaApi = aux.toString();
-            JSONObject results = new JSONObject(conteudoDaApi);
-            JSONArray types;
-            types = results.getJSONArray("results");
-            JSONObject nameObject = new JSONObject();
-            for(int i = 0; i < types.length(); i++) {
-                nameObject = types.getJSONObject(i);
-                nameTypes[i] = nameObject.getString("name");
-                urlTypes.add(nameObject.getString("url"));
+            JSONObject jsonData = new JSONObject(aux.toString());
+            JSONArray results = jsonData.getJSONArray("results");
+            for(int i = 0; i < 20; i++){
+                JSONObject name = results.getJSONObject(i);
+                types[i] = name.getString("name");
             }
-            infoApi.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
+    public Types(){
+
+    }
+    public ArrayList<Object> comparePokemonTypes(String type, ArrayList <Pokemon> pokemons){
+        ArrayList <Object> pokemonNames = new ArrayList<Object>();
+        int j = 0;
+        for(int i = 0; i < 721; i++){
+            //System.out.println("Name:"+pokemons.get(i).getName());
+           // System.out.println("pokemon type1:"+pokemons.get(i).getPokemonType1());
+            //System.out.println("pokemon type2:"+pokemons.get(i).getPokemonType2());
+            //System.out.println("TYPE:"+type);
+            if(type.equals(pokemons.get(i).getPokemonType1()) || type.equals(pokemons.get(i).getPokemonType2())){
+                pokemonNames.add(pokemons.get(i).getName());
+                //System.out.println("igual");
+            }
+        }
+        return pokemonNames;
+    }
+    public Object[] getNameTypes() {
+        return types;
     }
 }

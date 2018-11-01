@@ -6,19 +6,17 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
+
+import static model.Pokedex.allPokemons;
+
 
 public class TypesList extends JFrame{
     public JList typesList;
     public JScrollPane typesScroll;
-    public MainMenu typesTab = new MainMenu();
     public JPanel typesPanel = new JPanel();
     public TypesList() {
-        Types types = null;
-        try {
-            types = new Types("https://pokeapi.co/api/v2/type/");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Types types = new Types();
         JFrame typesFrame = new JFrame("Pokédex - Types");
         typesList = new JList(types.getNameTypes());
         typesScroll = new JScrollPane(typesList);
@@ -29,13 +27,14 @@ public class TypesList extends JFrame{
         typesScroll.setPreferredSize(new Dimension(250, 80));
         typesFrame.pack();
         typesFrame.setVisible(true);
-        PokemonTypes pokemonTypesList = new PokemonTypes();
+        Types pokemonTypesList = new Types();
         typesList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent listSelectionEvent) {
-                Object[] listPokemonTypes;
-                listPokemonTypes = pokemonTypesList.comparePokemonTypes(listSelectionEvent.toString());
-                new PokemonTypes(listSelectionEvent.toString(), listPokemonTypes);
+                ArrayList <Object> listPokemonTypes;
+                listPokemonTypes = pokemonTypesList.comparePokemonTypes(typesList.getSelectedValue().toString(), allPokemons);
+                new PokemonTypes(typesList.getSelectedValue().toString(), listPokemonTypes.toArray());
+                typesFrame.dispose();
             }
         });
     }
