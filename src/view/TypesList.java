@@ -25,7 +25,7 @@ public class TypesList extends JFrame{
         typesFrame.setLocationRelativeTo(null);
         typesFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         typesFrame.getContentPane().add(typesScroll);
-        typesScroll.setPreferredSize(new Dimension(250, 80));
+        typesScroll.setPreferredSize(new Dimension(220, 300));
         typesFrame.pack();
         typesFrame.setVisible(true);
         Types pokemonTypesList = new Types();

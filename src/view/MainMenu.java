@@ -30,6 +30,7 @@ public class MainMenu {
         buttonSearch.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                new PokemonSearch();
             }
         });
     }

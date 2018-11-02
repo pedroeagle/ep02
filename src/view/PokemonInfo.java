@@ -1,10 +1,12 @@
 package view;
 
+import com.sun.tools.javac.Main;
 import model.Pokedex;
 import model.Pokemon;
 import model.Types;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class PokemonInfo {
     private JLabel pokemonName;
@@ -24,7 +26,7 @@ public class PokemonInfo {
     private JLabel atackText;
     private JLabel pokemonAtack;
     private JLabel pokemonDefense;
-    private JLabel defendeText;
+    private JLabel defenseText;
     private JLabel spAtackText;
     private JLabel spDefenseText;
     private JLabel pokemonSpAtack;
@@ -41,42 +43,64 @@ public class PokemonInfo {
     private JLabel pokemonExperience;
     private JPanel pokemonInfoPanel;
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
-    Types pokemonInfos;
-    Pokemon pokemonToShow;
+    Types pokemonInfos = new Types();
+    Pokemon pokemonToShow = new Pokemon();
     public PokemonInfo(String pokemon) {
         pokemonToShow.setName(pokemon);
-        pokemonToShow = pokemonInfos.comparePokemonInfo(pokemon);
-        pokemonName = new JLabel();
-        pokemonType1 = new JLabel(pokemonToShow.getPokemonType1());
-        pokemonType2 = new JLabel(pokemonToShow.getPokemonType2());
-        pokemonAbility1 = new JLabel(pokemonToShow.getAbility1());
-        pokemonAbility2 = new JLabel(pokemonToShow.getAbility2());
-        pokemonAbility3 = new JLabel(pokemonToShow.getAbility3());
-        if (pokemonToShow.getLegendary().equals("true")) {
-            pokemonLegendary = new JLabel("This pokemon is Legendary");
+        if(pokemonInfos.comparePokemonInfo(pokemon)!=null){
+            pokemonToShow = pokemonInfos.comparePokemonInfo(pokemon);
+        }
+
+        else{
+            System.out.println("Erro NullPointer");
+            new MainMenu();
+        }
+        pokemonName.setText(pokemonToShow.getName());
+        if (pokemonToShow.getPokemonType1().length() == 0) {
+            type1Text.setText("");
+        }
+        pokemonType1.setText(pokemonToShow.getPokemonType1());
+        if (pokemonToShow.getPokemonType2().length() == 0) {
+            type2Text.setText("");
+        }
+        pokemonType2.setText(pokemonToShow.getPokemonType2());
+        if (pokemonToShow.getAbility1().length() == 0) {
+            ability1Text.setText("");
+        }
+        pokemonAbility1.setText(pokemonToShow.getAbility1());
+        if (pokemonToShow.getAbility2().length() == 0) {
+            ability2Text.setText("");
+        }
+        pokemonAbility2.setText(pokemonToShow.getAbility2());
+
+        if (pokemonToShow.getAbility3().length() == 0) {
+            ability3Text.setText("");
+        }
+            pokemonAbility3.setText(pokemonToShow.getAbility3());
+
+
+        if (pokemonToShow.getLegendary().equals("True")) {
+            pokemonLegendary.setText("This pokemon is Legendary");
         }
         else{
-            pokemonLegendary = new JLabel("This pokemon is not legendary");
+            pokemonLegendary.setText("");
         }
-        pokemonHp = new JLabel(String.valueOf(pokemonToShow.getHp()));
-        pokemonAtack = new JLabel(String.valueOf(pokemonToShow.getAtack()));
-        pokemonDefense = new JLabel(String.valueOf(pokemonToShow.getDefense()));
-        pokemonSpAtack = new JLabel(String.valueOf(pokemonToShow.getSpAtk()));
-        pokemonSpDefense = new JLabel(String.valueOf(pokemonToShow.getSpDef()));
-        pokemonGeneration = new JLabel(String.valueOf(pokemonToShow.getGeneration()));
-        pokemonSpeed = new JLabel(String.valueOf(pokemonToShow.getSpeed()));
-        pokemonHeight = new JLabel(String.valueOf(pokemonToShow.getHeight()));
-        pokemonWeight = new JLabel(String.valueOf(pokemonToShow.getWeight()));
-        pokemonImage = new JLabel(String.valueOf(pokemonToShow.getPokemonImage()));
-        pokemonExperience = new JLabel(String.valueOf(pokemonToShow.getExperience()));
-
-
+        pokemonHp.setText(String.valueOf(pokemonToShow.getHp()));
+        pokemonAtack.setText(String.valueOf(pokemonToShow.getAtack()));
+        pokemonDefense.setText(String.valueOf(pokemonToShow.getDefense()));
+        pokemonSpAtack.setText(String.valueOf(pokemonToShow.getSpAtk()));
+        pokemonSpDefense.setText(String.valueOf(pokemonToShow.getSpDef()));
+        pokemonGeneration.setText(String.valueOf(pokemonToShow.getGeneration()+"º generation"));
+        pokemonSpeed.setText(String.valueOf(pokemonToShow.getSpeed()));
+        pokemonHeight.setText(String.valueOf(pokemonToShow.getHeight()));
+        pokemonWeight.setText(String.valueOf(pokemonToShow.getWeight()));
+        pokemonImage.setIcon(pokemonToShow.getPokemonImage());
+        pokemonExperience.setText(String.valueOf(pokemonToShow.getExperience()));
         JFrame pokemonInfo = new JFrame(pokemonToShow.getName());
         pokemonInfo.add(pokemonInfoPanel);
         pokemonInfo.setLocationRelativeTo(null);
         pokemonInfo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        pokemonInfo.pack();
+        pokemonInfo.setVisible(true);
     }
 }

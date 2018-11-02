@@ -49,16 +49,24 @@ public class Types{
     public Pokemon comparePokemonInfo(String name){
         int i;
         Pokemon pokemon = new Pokemon();
+
         for(i = 0; i < 721; i++){
-            System.out.println(Pokedex.allPokemons.get(i));
-            if(Pokedex.allPokemons.get(i).equals(name)){
-                pokemon = Pokedex.allPokemons.get(i);
-                break;
+            if(name.equals(Pokedex.allPokemons.get(i).getName().toString())){
+                return Pokedex.allPokemons.get(i);
             }
         }
         return pokemon;
     }
     public Object[] getNameTypes() {
         return types;
+    }
+
+    public ArrayList<Object> getAllPokemonNames(){
+        ArrayList<Object> names = new ArrayList<Object>();
+        int i;
+        for(i = 0; i < 721; i++){
+            names.add(Pokedex.allPokemons.get(i).getName());
+        }
+        return names;
     }
 }

@@ -40,6 +40,7 @@ public class Pokedex {
             }
             pokemons = new Pokemon();
         }
+
         new Login();
     }
 }
