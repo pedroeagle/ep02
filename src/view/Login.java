@@ -15,13 +15,12 @@ public class Login{
     String senha;
     public JButton loginButton;
     public JPanel loginPanel;
-    private JTextField userTextBox;
+    private JTextField loginUser;
     private JPasswordField loginPassword;
     private JButton registerButton;
     private JLabel textRegisterError;
-
+    public User user = new User();
     public Login(){
-        User user = new User();
         JFrame login = new JFrame("Login");
         login.setContentPane(loginPanel);
         login.setLocationRelativeTo(null);
@@ -40,7 +39,8 @@ public class Login{
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
-                    if(user.LoginUser(userTextBox.getText(), userTextBox.getText())){
+                    if(user.LoginUser(loginUser.getText(), loginPassword.getText())){
+                        user.getAllUserData(loginUser.getText());
                         new MainMenu();
                         login.dispose();
                     }
@@ -60,11 +60,16 @@ public class Login{
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
-                    if(user.CreateUser(userTextBox.getText(), userTextBox.getText())){
+                    if(user.CreateUser(loginUser.getText(), loginPassword.getText())){
                         login.dispose();
                         Pokedex.registerError = true;
                         Pokedex.loginError = false;
                         new Login();
+                    }
+                    else{
+                        user.getAllUserData(loginUser.getText());
+                        login.dispose();
+                        new MainMenu();
                     }
                 } catch (IOException e) {
                     e.printStackTrace();

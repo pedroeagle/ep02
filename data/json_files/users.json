@@ -1,1 +1,1 @@
-{"count":4,"users":[{"password":"12345","name":"pedro"},{"password":"54321","name":"outroUser"},{"password":"","name":""},{"password":"12","name":"12"}]}
+{"count":3,"users":[{"pokemons":[{"name":""}],"password":"12345","name":"pedro","experience":50,"n":0},{"pokemons":[{"name":""}],"password":"12345","name":"pedro1","experience":50,"n":0},{"pokemons":[{"name":""}],"password":"resfs","name":"kfsodk","experience":50,"n":0}]}

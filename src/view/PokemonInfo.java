@@ -7,6 +7,8 @@ import model.Types;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class PokemonInfo {
     private JLabel pokemonName;
@@ -42,6 +44,10 @@ public class PokemonInfo {
     private JLabel textExperience;
     private JLabel pokemonExperience;
     private JPanel pokemonInfoPanel;
+    private JButton catchButton;
+    private JLabel userExperienceText;
+    private JLabel userExperience;
+    private JLabel catchResult;
 
     Types pokemonInfos = new Types();
     Pokemon pokemonToShow = new Pokemon();
@@ -102,5 +108,14 @@ public class PokemonInfo {
         pokemonInfo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pokemonInfo.pack();
         pokemonInfo.setVisible(true);
+        catchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.out.println(pokemonExperience.getText());
+                if(userExperience.getText().compareTo(pokemonExperience.getText()) > 0){
+                    System.out.println("consegue");
+                }
+            }
+        });
     }
 }
