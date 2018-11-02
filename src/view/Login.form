@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="view.Login">
-  <grid id="27dc6" binding="loginPanel" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
-    <margin top="50" left="50" bottom="50" right="50"/>
+  <grid id="27dc6" binding="loginPanel" layout-manager="GridLayoutManager" row-count="9" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="0" vgap="0">
+    <margin top="100" left="100" bottom="100" right="100"/>
     <constraints>
-      <xy x="264" y="280" width="427" height="284"/>
+      <xy x="264" y="280" width="427" height="424"/>
     </constraints>
     <properties>
       <alignmentX value="0.5"/>
@@ -28,7 +28,7 @@
           <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Registrar"/>
+          <text value="Register"/>
         </properties>
       </component>
       <component id="2105e" class="javax.swing.JButton" binding="loginButton">
@@ -74,6 +74,21 @@
           <toolTipText value=""/>
         </properties>
       </component>
+      <component id="c0b1f" class="javax.swing.JLabel" binding="textRegisterError">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="1" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <vspacer id="6393d">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="0" height="5"/>
+          </grid>
+        </constraints>
+      </vspacer>
     </children>
   </grid>
 </form>

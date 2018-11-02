@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pokedex {
-
+    public static boolean loginError = false;
+    public static boolean registerError = false;
     public void setName(String name) {
         this.name = name;
     }
