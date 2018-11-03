@@ -11,15 +11,13 @@ import java.io.IOException;
 
 
 public class Login{
-    String usuario;
-    String senha;
     public JButton loginButton;
     public JPanel loginPanel;
     private JTextField loginUser;
     private JPasswordField loginPassword;
     private JButton registerButton;
     private JLabel textRegisterError;
-    public User user = new User();
+    public static User user = new User();
     public Login(){
         JFrame login = new JFrame("Login");
         login.setContentPane(loginPanel);
@@ -76,10 +74,5 @@ public class Login{
                 }
             }
         });
-
-
-
-
-
     }
 }

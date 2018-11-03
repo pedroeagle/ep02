@@ -1,9 +1,7 @@
 package view;
 
 import com.sun.tools.javac.Main;
-import model.Pokedex;
-import model.Pokemon;
-import model.Types;
+import model.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -102,6 +100,21 @@ public class PokemonInfo {
         pokemonWeight.setText(String.valueOf(pokemonToShow.getWeight()));
         pokemonImage.setIcon(pokemonToShow.getPokemonImage());
         pokemonExperience.setText(String.valueOf(pokemonToShow.getExperience()));
+        userExperience.setText(String.valueOf(User.treinador.getExperience()));
+        switch (Types.caso) {
+            case 1:
+                catchResult.setText(String.valueOf("Você já tem este pokemon!"));
+                Types.caso = -1;
+                break;
+            case 2:
+                catchResult.setText("<html><body>Você não tem experiência suficiente <br>para este pokemon!</body></html>");
+                Types.caso = -1;
+                break;
+            case 0:
+                catchResult.setText("Capturou!");
+                Types.caso = -1;
+                break;
+        }
         JFrame pokemonInfo = new JFrame(pokemonToShow.getName());
         pokemonInfo.add(pokemonInfoPanel);
         pokemonInfo.setLocationRelativeTo(null);
@@ -111,10 +124,25 @@ public class PokemonInfo {
         catchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println(pokemonExperience.getText());
-                if(userExperience.getText().compareTo(pokemonExperience.getText()) > 0){
-                    System.out.println("consegue");
+                switch(Types.caso = Login.user.tryToCatch(pokemonName.getText(), User.treinador.getName(), pokemonToShow.getExperience())) {
+                    case 1:
+                        catchResult.setText("Você já tem este pokemon!");
+                        pokemonInfo.dispose();
+                        new PokemonInfo(pokemonToShow.getName());
+                        break;
+                    case 2:
+                        catchResult.setText("Você não tem experiência suficiente para este pokemon!");
+                        pokemonInfo.dispose();
+                        new PokemonInfo(pokemonToShow.getName());
+                        break;
+                    case 0:
+                        catchResult.setText("Capturou!");
+                        userExperience.setText(String.valueOf(User.treinador.getExperience()));
+                        pokemonInfo.dispose();
+                        new PokemonInfo(pokemonToShow.getName());
+                        break;
                 }
+
             }
         });
     }

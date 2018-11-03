@@ -20,5 +20,4 @@ public class Trainer extends Pokedex{
     }
 
     String[] myPokemons = new String[720];
-
 }

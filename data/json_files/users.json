@@ -1,1 +1,68 @@
-{"count":3,"users":[{"pokemons":[{"name":""}],"password":"12345","name":"pedro","experience":50,"n":0},{"pokemons":[{"name":""}],"password":"12345","name":"pedro1","experience":50,"n":0},{"pokemons":[{"name":""}],"password":"resfs","name":"kfsodk","experience":50,"n":0}]}
+{
+ "count": 7,
+ "users": [
+  {
+   "pokemons": [
+    {"name": "Bagon"},
+    {"name": "Accelgor"},
+    {"name": "Altaria"},
+    {"name": "Arcanine"},
+    {"name": "Axew"},
+    {"name": "Aegislash-Shield"},
+    {"name": "Absol"},
+    {"name": "Beautifly"}
+   ],
+   "password": "",
+   "name": "",
+   "experience": 622,
+   "n": 8
+  },
+  {
+   "pokemons": [
+    {"name": "Bagon"},
+    {"name": "Accelgor"},
+    {"name": "Accelgor"},
+    {"name": "Absol"}
+   ],
+   "password": "",
+   "name": "pedro",
+   "experience": 270,
+   "n": 4
+  },
+  {
+   "pokemons": [{"name": "Accelgor"}],
+   "password": "12345",
+   "name": "Pedro Igor",
+   "experience": 90,
+   "n": 1
+  },
+  {
+   "pokemons": [{"name": "Zygarde"}],
+   "password": "",
+   "name": "1",
+   "experience": 90,
+   "n": 1
+  },
+  {
+   "pokemons": [],
+   "password": "",
+   "name": "5",
+   "experience": 60,
+   "n": 0
+  },
+  {
+   "pokemons": [{"name": "Budew"}],
+   "password": "",
+   "name": "Pedro",
+   "experience": 88,
+   "n": 1
+  },
+  {
+   "pokemons": [],
+   "password": "",
+   "name": "pepepeepep",
+   "experience": 60,
+   "n": 0
+  }
+ ]
+}

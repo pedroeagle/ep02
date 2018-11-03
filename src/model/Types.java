@@ -86,4 +86,5 @@ public class Types{
         }
         return names;
     }
+    public static int caso = -1;
 }
