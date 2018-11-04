@@ -200,7 +200,7 @@ public class User{
                 infoJson.getJSONArray("users").getJSONObject(indexUser).put("n", n + 1);
 
                 FileWriter salvarMudança = new FileWriter("data/json_files/users.json");
-                salvarMudança.write(infoJson.toString(1));
+                salvarMudança.write(infoJson.toString(2));
                 salvarMudança.close();
                 getAllUserData(userName);
             }

@@ -32,6 +32,8 @@ public class Pokedex {
     public static void main(String[] args) {
         System.out.println("Program started!");
         Pokemon pokemons = new Pokemon();
+        AllRequestsThread thread = new AllRequestsThread();
+        thread.start();
         for(int i = 0; i < 721; i++) {
             try {
                 pokemons.setAll(i);
