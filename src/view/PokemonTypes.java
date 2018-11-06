@@ -21,7 +21,10 @@ public class PokemonTypes extends JFrame{
         JFrame pokemonTypesFrame = new JFrame("Type: "+type);
         pokemonTypesList = new JList(listNames);
         pokemonTypesScroll = new JScrollPane(pokemonTypesList);
-        pokemonTypesFrame.add(pokemonsTypesPanel);
+        if (pokemonsTypesPanel != null) {
+            pokemonTypesFrame.add(pokemonsTypesPanel);
+        }
+
         pokemonTypesFrame.setLocation(450,250);
         pokemonTypesFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pokemonTypesFrame.getContentPane().add(pokemonTypesScroll);

@@ -61,7 +61,9 @@ public class PokemonInfo {
             System.out.println("Erro NullPointer");
             new MainMenu();
         }
-        pokemonName.setText(pokemonToShow.getName());
+        if(pokemonToShow.getName() != null) {
+            pokemonName.setText(pokemonToShow.getName());
+        }
         if (pokemonToShow.getPokemonType1().length() == 0) {
             type1Text.setText("");
         }

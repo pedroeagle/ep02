@@ -1,10 +1,24 @@
 {
-  "count": 1,
+  "count": 3,
   "users": [
     {
       "pokemons": [],
       "password": "",
       "name": "",
+      "experience": 60,
+      "n": 0
+    },
+    {
+      "pokemons": [{"name": "Bagon"}],
+      "password": "",
+      "name": "pedro",
+      "experience": 90,
+      "n": 1
+    },
+    {
+      "pokemons": [],
+      "password": "",
+      "name": "d",
       "experience": 60,
       "n": 0
     }

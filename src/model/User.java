@@ -1,6 +1,7 @@
 package model;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import java.io.*;
 import java.util.ArrayList;
@@ -78,23 +79,27 @@ public class User{
         while (infoReader.ready()) {
             aux.append(infoReader.readLine());
         }
-        JSONObject infoJson = new JSONObject(aux.toString());
-        count = infoJson.getInt("count");
-        userJsonArray = infoJson.getJSONArray("users");
-        String[] compareName = new String[count];
-        String[] comparePass = new String[count];
-        for (int i = 0; i < count; i++) {
-            compareName[i] = userJsonArray.getJSONObject(i).getString("name");
-            comparePass[i] = userJsonArray.getJSONObject(i).getString("password");
-            JSONObject compareNameObject = new JSONObject();
-            if (compareName[i].equals(name)) {
-                if (comparePass[i].equals(password)) {
-                    exist = true;
-                } else {
-                    exist = false;
+        try {
+            JSONObject infoJson = new JSONObject(aux.toString());
+            count = infoJson.getInt("count");
+            userJsonArray = infoJson.getJSONArray("users");
+            String[] compareName = new String[count];
+            String[] comparePass = new String[count];
+            for (int i = 0; i < count; i++) {
+                compareName[i] = userJsonArray.getJSONObject(i).getString("name");
+                comparePass[i] = userJsonArray.getJSONObject(i).getString("password");
+                JSONObject compareNameObject = new JSONObject();
+                if (compareName[i].equals(name)) {
+                    if (comparePass[i].equals(password)) {
+                        exist = true;
+                    } else {
+                        exist = false;
+                    }
+                    break;
                 }
-                break;
             }
+        }catch (JSONException e){
+            e.printStackTrace();
         }
         return exist;
     }

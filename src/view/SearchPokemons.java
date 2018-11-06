@@ -12,7 +12,6 @@ public class SearchPokemons extends JFrame{
     private JButton searchButton;
     private JLabel resultText;
     public SearchPokemons() {
-        searchBox.setColumns(50);
         JFrame searchPokemonsFrame = new JFrame("Search");
         searchPokemonsFrame.add(SearchPanel);
         searchPokemonsFrame.setLocation(450,250);
@@ -20,6 +19,7 @@ public class SearchPokemons extends JFrame{
         //searchPokemonsFrame.getContentPane().add(searchBox);
         searchPokemonsFrame.pack();
         searchPokemonsFrame.setVisible(true);
+        searchBox.setColumns(50);
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {

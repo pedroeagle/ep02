@@ -1,5 +1,6 @@
 package model;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import javax.swing.*;
@@ -65,7 +66,7 @@ public class AllRequestsThread extends Thread {
                     }
                 }
             }
-        }catch (IOException e) {
+        }catch (IOException | JSONException e) {
             e.printStackTrace();
         }
     }
@@ -125,7 +126,10 @@ public class AllRequestsThread extends Thread {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        } catch (JSONException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
         //GET ALL POKEMON NAMES AND RESPECTIVE URL
         try {
             URL pokemonsUrl = new URL("https://pokeapi.co/api/v2/pokemon/");
@@ -154,7 +158,10 @@ public class AllRequestsThread extends Thread {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        } catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         try {
             for(int i = 0; i < 949; i++) {
                 URL abilitiesUrl = new URL(urlPokemons[i]);
@@ -201,6 +208,9 @@ public class AllRequestsThread extends Thread {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        } catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 }

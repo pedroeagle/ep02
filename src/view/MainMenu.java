@@ -17,7 +17,9 @@ public class MainMenu {
 
     public MainMenu(){
         JFrame mainFrame = new JFrame("Pokédex");
-        mainFrame.add(main);
+        if(main != null) {
+            mainFrame.add(main);
+        }
         mainFrame.setLocation(450,250);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.pack();

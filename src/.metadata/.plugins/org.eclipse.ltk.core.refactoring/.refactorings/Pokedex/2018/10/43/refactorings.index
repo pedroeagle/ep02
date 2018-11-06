@@ -1,0 +1,13 @@
+1540427262819	Convert local variable 'conteudoDaApi' to field
+1540427273975	Convert local variable 'infoApi' to field
+1540427285750	Encapsulate field 'conteudoDaApi'
+1540427674316	Convert local variable 'pokemonTypes' to field
+1540428165281	Convert local variable 'conteudoApi' to field
+1540428506960	Encapsulate field 'pokemonTypes'
+1540433797471	Convert local variable 'results' to field
+1540434485579	Delete element
+1540435477043	Delete element
+1540435988621	Encapsulate field 'pokemonTypes'
+1540436237234	Convert local variable 'pokemonTypes' to field
+1540436261441	Encapsulate field 'pokemonTypes'
+1540474010324	Delete element

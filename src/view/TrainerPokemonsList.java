@@ -13,7 +13,9 @@ public class TrainerPokemonsList extends JFrame{
         JFrame trainerPokemonsListFrame = new JFrame(trainerName+"'s Pokemons");
         trainerPokemonsList = new JList(pokemonsList);
         trainerPokemonsListScroll = new JScrollPane(trainerPokemonsList);
-        trainerPokemonsListFrame.add(trainerPokemonsListPanel);
+        if(trainerPokemonsList != null) {
+            trainerPokemonsListFrame.add(trainerPokemonsListPanel);
+        }
         trainerPokemonsListFrame.setLocation(450,250);
         trainerPokemonsListFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         trainerPokemonsListFrame.getContentPane().add(trainerPokemonsListScroll);

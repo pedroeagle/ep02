@@ -15,7 +15,9 @@ public class TrainersList extends JFrame{
         JFrame trainersListFrame = new JFrame("Trainers");
         trainersList = new JList(User.treinador.getTrainerNames());
         trainersListScroll = new JScrollPane(trainersList);
-        trainersListFrame.add(trainersListPanel);
+        if(trainersListPanel!=null) {
+            trainersListFrame.add(trainersListPanel);
+        }
         trainersListFrame.setLocation(450,250);
         trainersListFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         trainersListFrame.getContentPane().add(trainersListScroll);

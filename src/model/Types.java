@@ -1,6 +1,7 @@
 package model;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -37,7 +38,10 @@ public class Types{
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
-            }
+            } catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         }
     }
     public Types(){
