@@ -3,10 +3,7 @@ package model;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -15,7 +12,9 @@ public class Types{
     private BufferedReader typesJson;
     {
         try {
-            typesJson = new BufferedReader(new FileReader("data/json_files/types.json"));
+            InputStream file = User.class.getResourceAsStream("/data/json_files/types.json");
+            InputStreamReader reader = new InputStreamReader(file);
+            typesJson = new BufferedReader(reader);
             StringBuilder aux = new StringBuilder();
             while(typesJson.ready()){
                 aux.append(typesJson.readLine());

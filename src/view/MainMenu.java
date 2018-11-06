@@ -11,6 +11,8 @@ public class MainMenu {
     public JPanel main;
     public JButton buttonTypes;
     private JButton buttonSearch;
+    private JButton buttonMyPokemons;
+    private JButton buttonTrainers;
     public JList typesList;
     public JScrollPane typesScroll;
 
@@ -31,6 +33,18 @@ public class MainMenu {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 new PokemonSearch();
+            }
+        });
+        buttonMyPokemons.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                new MyPokemons();
+            }
+        });
+        buttonTrainers.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                new TrainersList();
             }
         });
     }

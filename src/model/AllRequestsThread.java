@@ -74,7 +74,7 @@ public class AllRequestsThread extends Thread {
                             typesXpokemons = new String[20][typesXPokemonsObject.getJSONArray("pokemon").length()];
                             for (int j = 0; j < typesXPokemonsObject.getJSONArray("pokemon").length(); j++) {
                                 typesXpokemons[i][j] = typesXPokemonsObject.getJSONArray("pokemon").getJSONObject(j).getJSONObject("pokemon").getString("name");
-                                System.out.println(typesXpokemons[i][j]);
+                                //System.out.println(typesXpokemons[i][j]);
                             }
                         }
                     } catch (IOException e) {

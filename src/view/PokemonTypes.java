@@ -24,6 +24,7 @@ public class PokemonTypes extends JFrame{
         pokemonTypesList.addComponentListener(new ComponentAdapter() {
         });
     }
+
     public PokemonTypes(String type, Object[] listNames){
         JFrame pokemonTypesFrame = new JFrame("Type: "+type);
         pokemonTypesList = new JList(listNames);

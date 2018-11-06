@@ -20,4 +20,14 @@ public class Trainer extends Pokedex{
     }
 
     String[] myPokemons = new String[720];
+
+    public Object[] getTrainerNames() {
+        return trainerNames;
+    }
+
+    public void setTrainerNames(Object[] trainerNames) {
+        this.trainerNames = trainerNames;
+    }
+
+    public Object[] trainerNames;
 }

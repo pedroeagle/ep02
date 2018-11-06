@@ -3,6 +3,7 @@ package model;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import view.Login;
+import view.TrainersList;
 
 
 import java.io.*;
@@ -20,7 +21,9 @@ public class User{
         JSONArray userJsonArray = new JSONArray();
         BufferedReader infoReader = null;
         try {
-            infoReader = new BufferedReader(new FileReader("data/json_files/users.json"));
+            InputStream file = Pokemon.class.getResourceAsStream("/data/json_files/users.json");
+            InputStreamReader reader = new InputStreamReader(file);
+            infoReader = new BufferedReader(reader);
             StringBuilder aux = new StringBuilder();
             while (infoReader.ready()) {
                 try {
@@ -61,7 +64,7 @@ public class User{
             userJsonArray.put(nameJson);
             fileJson.put("users", userJsonArray);
             try {
-                salvarRegistro = new FileWriter("data/json_files/users.json");
+                salvarRegistro = new FileWriter("src/data/json_files/users.json");
                 salvarRegistro.write(fileJson.toString(1));
                 salvarRegistro.close();
             } catch (IOException e) {
@@ -76,11 +79,11 @@ public class User{
         boolean exist = false;
         JSONArray userJsonArray = new JSONArray();
         BufferedReader infoReader = null;
-        try {
-            infoReader = new BufferedReader(new FileReader("data/json_files/users.json"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+
+            InputStream file = User.class.getResourceAsStream("/data/json_files/users.json");
+            InputStreamReader reader = new InputStreamReader(file);
+            infoReader = new BufferedReader(reader);
+
         StringBuilder aux = new StringBuilder();
         while (infoReader.ready()) {
             aux.append(infoReader.readLine());
@@ -107,17 +110,18 @@ public class User{
     }
 
     public static Trainer treinador = new Trainer();
+    Object[][] trainerPokemons;
+    int count = 0;
 
     public void getAllUserData(String name) throws IOException {
-        int count = 0;
         JSONArray userJsonArray = new JSONArray();
         BufferedReader infoReader = null;
-        try {
-            infoReader = new BufferedReader(new FileReader("data/json_files/users.json"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+
+        InputStream file = User.class.getResourceAsStream("/data/json_files/users.json");
+        InputStreamReader reader = new InputStreamReader(file);
+        infoReader = new BufferedReader(reader);
         StringBuilder aux = new StringBuilder();
+
         while (infoReader.ready()) {
             aux.append(infoReader.readLine());
         }
@@ -127,9 +131,16 @@ public class User{
         String[] compareName = new String[count];
         String[] comparePass = new String[count];
 
-
+        ArrayList <String> trainerNames = new ArrayList<>();
+        trainerPokemons = new Object[count][1000];
+        int n;
         for (int i = 0; i < count; i++) {
+            trainerNames.add(userJsonArray.getJSONObject(i).getString("name"));
             compareName[i] = userJsonArray.getJSONObject(i).getString("name");
+            n = userJsonArray.getJSONObject(i).getInt("n"); //quantidade de pokemons
+            for(int k = 0; k < n; k++){
+                trainerPokemons[i][k] = userJsonArray.getJSONObject(i).getJSONArray("pokemons").getJSONObject(k).getString("name");
+            }
             JSONObject compareNameObject = new JSONObject();
             if (compareName[i].equals(name)) {
                 treinador.setName(compareName[i]);
@@ -146,6 +157,15 @@ public class User{
                 }
             }
         }
+        treinador.setTrainerNames(trainerNames.toArray());
+    }
+    public Object[] getTrainerPokemons(String trainerName){
+        for(int i = 0; i < count; i++){
+            if(treinador.getTrainerNames()[i].equals(trainerName)){
+                return trainerPokemons[i];
+            }
+        }
+        return null;
     }
 
     public boolean pokemonAlreadyExists(String pokemonName) {
@@ -161,7 +181,9 @@ public class User{
         JSONArray userJsonArray = new JSONArray();
         BufferedReader infoReader = null;
         try {
-            infoReader = new BufferedReader(new FileReader("data/json_files/users.json"));
+            InputStream file = User.class.getResourceAsStream("/data/json_files/users.json");
+            InputStreamReader reader = new InputStreamReader(file);
+            infoReader = new BufferedReader(reader);
             StringBuilder aux = new StringBuilder();
             while (infoReader.ready()) {
                 try {
@@ -199,7 +221,7 @@ public class User{
                 infoJson.getJSONArray("users").getJSONObject(indexUser).remove("n");
                 infoJson.getJSONArray("users").getJSONObject(indexUser).put("n", n + 1);
 
-                FileWriter salvarMudança = new FileWriter("data/json_files/users.json");
+                FileWriter salvarMudança = new FileWriter("src/data/json_files/users.json");
                 salvarMudança.write(infoJson.toString(2));
                 salvarMudança.close();
                 getAllUserData(userName);

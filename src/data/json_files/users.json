@@ -1,0 +1,94 @@
+{
+  "count": 10,
+  "users": [
+    {
+      "pokemons": [
+        {"name": "Bagon"},
+        {"name": "Accelgor"},
+        {"name": "Altaria"},
+        {"name": "Arcanine"},
+        {"name": "Axew"},
+        {"name": "Aegislash-Shield"},
+        {"name": "Absol"},
+        {"name": "Beautifly"},
+        {"name": "Dedenne"},
+        {"name": "Bisharp"}
+      ],
+      "password": "",
+      "name": "",
+      "experience": 783,
+      "n": 10
+    },
+    {
+      "pokemons": [
+        {"name": "Bagon"},
+        {"name": "Accelgor"},
+        {"name": "Accelgor"},
+        {"name": "Absol"}
+      ],
+      "password": "",
+      "name": "pedro",
+      "experience": 270,
+      "n": 4
+    },
+    {
+      "pokemons": [
+        {"name": "Accelgor"},
+        {"name": "Chinchou"}
+      ],
+      "password": "12345",
+      "name": "Pedro Igor",
+      "experience": 123,
+      "n": 2
+    },
+    {
+      "pokemons": [{"name": "Zygarde"}],
+      "password": "",
+      "name": "1",
+      "experience": 90,
+      "n": 1
+    },
+    {
+      "pokemons": [],
+      "password": "",
+      "name": "5",
+      "experience": 60,
+      "n": 0
+    },
+    {
+      "pokemons": [{"name": "Budew"}],
+      "password": "",
+      "name": "Pedro",
+      "experience": 88,
+      "n": 1
+    },
+    {
+      "pokemons": [],
+      "password": "",
+      "name": "pepepeepep",
+      "experience": 60,
+      "n": 0
+    },
+    {
+      "pokemons": [],
+      "password": "",
+      "name": "d",
+      "experience": 60,
+      "n": 0
+    },
+    {
+      "pokemons": [],
+      "password": "",
+      "name": "e",
+      "experience": 60,
+      "n": 0
+    },
+    {
+      "pokemons": [],
+      "password": "",
+      "name": "te",
+      "experience": 60,
+      "n": 0
+    }
+  ]
+}

@@ -80,7 +80,7 @@ public class PokemonInfo {
         if (pokemonToShow.getAbility3().length() == 0) {
             ability3Text.setText("");
         }
-            pokemonAbility3.setText(pokemonToShow.getAbility3());
+        pokemonAbility3.setText(pokemonToShow.getAbility3());
 
 
         if (pokemonToShow.getLegendary().equals("True")) {
