@@ -8,34 +8,36 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Types{
-    String []types = new String[20];
+    String[] types = Pokedex.thread.getTypes();
     private BufferedReader typesJson;
-    {
-        try {
-            InputStream file = User.class.getResourceAsStream("/data/json_files/types.json");
-            InputStreamReader reader = new InputStreamReader(file);
-            typesJson = new BufferedReader(reader);
-            StringBuilder aux = new StringBuilder();
-            while(typesJson.ready()){
-                aux.append(typesJson.readLine());
-            }
-            JSONObject jsonData = new JSONObject(aux.toString());
-            JSONArray results = jsonData.getJSONArray("results");
-            for(int i = 0; i < 18; i++){
-                JSONObject name = results.getJSONObject(i);
-                types[i] = name.getString("name");
-                for(int j = 0; j < i; j++){
-                    if(types[j].compareTo(types[i]) > 0){
-                        String auxStr = types[j];
-                        types[j] = types[i];
-                        types[i] = auxStr;
+    //O CÓDIGO ABAIXO (dentro do méotod Obsolete) SE TORNOU OBSOLETO POIS A REQUISIÇÃO DE TIPOS AGORA É FEITA
+    //POR MEIO DA API
+    void Obsolete() {
+        {
+            try {
+                typesJson = new BufferedReader(new FileReader("data/json_files/types.json"));
+                StringBuilder aux = new StringBuilder();
+                while (typesJson.ready()) {
+                    aux.append(typesJson.readLine());
+                }
+                JSONObject jsonData = new JSONObject(aux.toString());
+                JSONArray results = jsonData.getJSONArray("results");
+                for (int i = 0; i < 18; i++) {
+                    JSONObject name = results.getJSONObject(i);
+                    types[i] = name.getString("name");
+                    for (int j = 0; j < i; j++) {
+                        if (types[j].compareTo(types[i]) > 0) {
+                            String auxStr = types[j];
+                            types[j] = types[i];
+                            types[i] = auxStr;
+                        }
                     }
                 }
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
     public Types(){
@@ -45,7 +47,7 @@ public class Types{
         ArrayList <Object> pokemonNames = new ArrayList<Object>();
         int j = 0, k = 0;
         for(int i = 0; i < 721; i++){
-            if(type.equals(pokemons.get(i).getPokemonType1()) || type.equals(pokemons.get(i).getPokemonType2())){
+            if(type.equals(pokemons.get(i).getPokemonType1().toLowerCase()) || type.equals(pokemons.get(i).getPokemonType2().toLowerCase())){
                 pokemonNames.add(pokemons.get(i).getName());
                 for(j = 0; j < k; j++){
                     if(pokemonNames.get(j).toString().compareTo(pokemonNames.get(k).toString()) > 0){
@@ -58,15 +60,16 @@ public class Types{
         return pokemonNames;
     }
     public Pokemon comparePokemonInfo(String name){
+        String theName = name.toLowerCase();
         int i;
         Pokemon pokemon = new Pokemon();
 
         for(i = 0; i < 721; i++){
-            if(name.equals(Pokedex.allPokemons.get(i).getName().toString())){
+            if(theName.equals(Pokedex.allPokemons.get(i).getName().toLowerCase())){
                 return Pokedex.allPokemons.get(i);
             }
         }
-        return pokemon;
+        return null;
     }
     public Object[] getNameTypes() {
         return types;

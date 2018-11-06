@@ -2,13 +2,8 @@ package model;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import view.Login;
-import view.TrainersList;
-
-
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class User{
     public User() {
@@ -21,9 +16,7 @@ public class User{
         JSONArray userJsonArray = new JSONArray();
         BufferedReader infoReader = null;
         try {
-            InputStream file = Pokemon.class.getResourceAsStream("/data/json_files/users.json");
-            InputStreamReader reader = new InputStreamReader(file);
-            infoReader = new BufferedReader(reader);
+            infoReader = new BufferedReader(new FileReader("data/json_files/users.json"));
             StringBuilder aux = new StringBuilder();
             while (infoReader.ready()) {
                 try {
@@ -64,9 +57,10 @@ public class User{
             userJsonArray.put(nameJson);
             fileJson.put("users", userJsonArray);
             try {
-                salvarRegistro = new FileWriter("src/data/json_files/users.json");
-                salvarRegistro.write(fileJson.toString(1));
+                salvarRegistro = new FileWriter("data/json_files/users.json");
+                salvarRegistro.write(fileJson.toString(2));
                 salvarRegistro.close();
+                getAllUserData(name);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -78,11 +72,7 @@ public class User{
         int count = 0;
         boolean exist = false;
         JSONArray userJsonArray = new JSONArray();
-        BufferedReader infoReader = null;
-
-            InputStream file = User.class.getResourceAsStream("/data/json_files/users.json");
-            InputStreamReader reader = new InputStreamReader(file);
-            infoReader = new BufferedReader(reader);
+        BufferedReader infoReader = new BufferedReader(new FileReader("data/json_files/users.json"));
 
         StringBuilder aux = new StringBuilder();
         while (infoReader.ready()) {
@@ -115,11 +105,7 @@ public class User{
 
     public void getAllUserData(String name) throws IOException {
         JSONArray userJsonArray = new JSONArray();
-        BufferedReader infoReader = null;
-
-        InputStream file = User.class.getResourceAsStream("/data/json_files/users.json");
-        InputStreamReader reader = new InputStreamReader(file);
-        infoReader = new BufferedReader(reader);
+        BufferedReader infoReader = new BufferedReader(new FileReader("data/json_files/users.json"));
         StringBuilder aux = new StringBuilder();
 
         while (infoReader.ready()) {
@@ -129,7 +115,6 @@ public class User{
         count = infoJson.getInt("count");
         userJsonArray = infoJson.getJSONArray("users");
         String[] compareName = new String[count];
-        String[] comparePass = new String[count];
 
         ArrayList <String> trainerNames = new ArrayList<>();
         trainerPokemons = new Object[count][1000];
@@ -180,58 +165,54 @@ public class User{
     public int tryToCatch(String pokemonName, String userName, int pokemonExperience) {
         JSONArray userJsonArray = new JSONArray();
         BufferedReader infoReader = null;
+        StringBuilder aux = new StringBuilder();
         try {
-            InputStream file = User.class.getResourceAsStream("/data/json_files/users.json");
-            InputStreamReader reader = new InputStreamReader(file);
-            infoReader = new BufferedReader(reader);
-            StringBuilder aux = new StringBuilder();
+            infoReader = new BufferedReader(new FileReader("data/json_files/users.json"));
             while (infoReader.ready()) {
-                try {
-                    aux.append(infoReader.readLine());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                aux.append(infoReader.readLine());
             }
-            JSONObject pokemon;
-            JSONObject infoJson = new JSONObject(aux.toString());
-            JSONArray pokemonArray = new JSONArray();
-            int count = infoJson.getInt("count");
-            int indexUser = 0;
-            for (int i = 0; i < count; i++) {
-                if (userName.equals(infoJson.getJSONArray("users").getJSONObject(i).getString("name"))) {
-                    indexUser = i;
-                    break;
-                }
+        }catch (FileNotFoundException e1) {
+            e1.printStackTrace();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        JSONObject pokemon;
+        JSONObject infoJson = new JSONObject(aux.toString());
+        JSONArray pokemonArray = new JSONArray();
+        int count = infoJson.getInt("count");
+        int indexUser = 0;
+        for (int i = 0; i < count; i++) {
+            if (userName.equals(infoJson.getJSONArray("users").getJSONObject(i).getString("name"))) {
+                indexUser = i;
+                break;
             }
-            if (pokemonAlreadyExists(pokemonName)) {
-                return 1;
-            }
-            else if(pokemonExperience > infoJson.getJSONArray("users").getJSONObject(indexUser).getInt("experience")){
-                return 2;
-            }
-            else {
-                JSONObject nameObject = new JSONObject();
-                nameObject.put("name", pokemonName);
-                infoJson.getJSONArray("users").getJSONObject(indexUser).getJSONArray("pokemons").put(nameObject);
-                int userExperience = infoJson.getJSONArray("users").getJSONObject(indexUser).getInt("experience");
-                userExperience += pokemonExperience / 2;
-                infoJson.getJSONArray("users").getJSONObject(indexUser).remove("experience");
-                infoJson.getJSONArray("users").getJSONObject(indexUser).put("experience", userExperience);
-                int n = infoJson.getJSONArray("users").getJSONObject(indexUser).getInt("n");
-                infoJson.getJSONArray("users").getJSONObject(indexUser).remove("n");
-                infoJson.getJSONArray("users").getJSONObject(indexUser).put("n", n + 1);
-
-                FileWriter salvarMudança = new FileWriter("src/data/json_files/users.json");
+        }
+        if (pokemonAlreadyExists(pokemonName)) {
+            return 1;
+        }
+        else if(pokemonExperience > infoJson.getJSONArray("users").getJSONObject(indexUser).getInt("experience")){
+            return 2;
+        }
+        else {
+            JSONObject nameObject = new JSONObject();
+            nameObject.put("name", pokemonName);
+            infoJson.getJSONArray("users").getJSONObject(indexUser).getJSONArray("pokemons").put(nameObject);
+            int userExperience = infoJson.getJSONArray("users").getJSONObject(indexUser).getInt("experience");
+            userExperience += pokemonExperience / 2;
+            infoJson.getJSONArray("users").getJSONObject(indexUser).remove("experience");
+            infoJson.getJSONArray("users").getJSONObject(indexUser).put("experience", userExperience);
+            int n = infoJson.getJSONArray("users").getJSONObject(indexUser).getInt("n");
+            infoJson.getJSONArray("users").getJSONObject(indexUser).remove("n");
+            infoJson.getJSONArray("users").getJSONObject(indexUser).put("n", n + 1);
+            FileWriter salvarMudança = null;
+            try {
+                salvarMudança = new FileWriter("data/json_files/users.json");
                 salvarMudança.write(infoJson.toString(2));
                 salvarMudança.close();
-                getAllUserData(userName);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
             return 0;
-        }catch(FileNotFoundException e){
-            e.printStackTrace();
-        } catch(IOException e){
-            e.printStackTrace();
         }
-        return 0;
     }
 }

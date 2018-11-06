@@ -1,25 +1,24 @@
 package view;
 
-import model.Pokemon;
+import model.Pokedex;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public class MainMenu {
     public JPanel main;
     public JButton buttonTypes;
-    private JButton buttonSearch;
+    private JButton buttonAllPokemons;
     private JButton buttonMyPokemons;
     private JButton buttonTrainers;
-    public JList typesList;
-    public JScrollPane typesScroll;
+    private JButton buttonSearch;
+    private JButton exitButton;
 
     public MainMenu(){
         JFrame mainFrame = new JFrame("Pokédex");
         mainFrame.add(main);
-        mainFrame.setLocationRelativeTo(null);
+        mainFrame.setLocation(450,250);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.pack();
         mainFrame.setVisible(true);
@@ -29,10 +28,10 @@ public class MainMenu {
                 new TypesList();
             }
         });
-        buttonSearch.addActionListener(new ActionListener() {
+        buttonAllPokemons.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                new PokemonSearch();
+                new AllPokemons();
             }
         });
         buttonMyPokemons.addActionListener(new ActionListener() {
@@ -45,6 +44,21 @@ public class MainMenu {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 new TrainersList();
+            }
+        });
+        buttonSearch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                new SearchPokemons();
+            }
+        });
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Pokedex.loginError = false;
+                Pokedex.registerError = false;
+                mainFrame.dispose();
+                new Login();
             }
         });
     }

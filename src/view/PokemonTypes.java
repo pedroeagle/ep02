@@ -1,17 +1,9 @@
 package view;
-
-import model.Pokedex;
-import model.Pokemon;
-
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
-import java.util.ArrayList;
-import java.util.List;
-
-import static model.Pokedex.allPokemons;
 
 public class PokemonTypes extends JFrame{
     public JPanel pokemonsTypesPanel;
@@ -30,7 +22,7 @@ public class PokemonTypes extends JFrame{
         pokemonTypesList = new JList(listNames);
         pokemonTypesScroll = new JScrollPane(pokemonTypesList);
         pokemonTypesFrame.add(pokemonsTypesPanel);
-        pokemonTypesFrame.setLocationRelativeTo(null);
+        pokemonTypesFrame.setLocation(450,250);
         pokemonTypesFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pokemonTypesFrame.getContentPane().add(pokemonTypesScroll);
         pokemonTypesScroll.setPreferredSize(new Dimension(220, 300));

@@ -1,0 +1,12 @@
+{
+  "count": 1,
+  "users": [
+    {
+      "pokemons": [],
+      "password": "",
+      "name": "",
+      "experience": 60,
+      "n": 0
+    }
+  ]
+}

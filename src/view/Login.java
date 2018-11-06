@@ -21,7 +21,7 @@ public class Login{
     public Login(){
         JFrame login = new JFrame("Login");
         login.setContentPane(loginPanel);
-        login.setLocationRelativeTo(null);
+        login.setLocation(450,250);
         if(Pokedex.registerError){
             textRegisterError.setText("Este usuário já existe. Tente novamente.");
             textRegisterError.setForeground(Color.RED);

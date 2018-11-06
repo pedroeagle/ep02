@@ -140,12 +140,8 @@ public class Pokemon extends Pokedex{
     }
 
     public void setAll(int limit) throws IOException{
-        InputStream file = Pokemon.class.getResourceAsStream("/data/csv_files/POKEMONS_DATA_1.csv");
-        InputStreamReader reader = new InputStreamReader(file);
-        BufferedReader POKEMONS_DATA_1 = new BufferedReader(reader);
-        file = Pokemon.class.getResourceAsStream("/data/csv_files/POKEMONS_DATA_2.csv");
-        reader = new InputStreamReader(file);
-        BufferedReader POKEMONS_DATA_2 = new BufferedReader(reader);
+        BufferedReader POKEMONS_DATA_1 = new BufferedReader(new FileReader("data/csv_files/POKEMONS_DATA_1.csv"));
+        BufferedReader POKEMONS_DATA_2 = new BufferedReader(new FileReader("data/csv_files/POKEMONS_DATA_2.csv"));
         String linhaAux1;
         String linhaAux2;
         for(int i = 0; i < limit+1; i++) {
@@ -156,7 +152,7 @@ public class Pokemon extends Pokedex{
         linhaAux1 = POKEMONS_DATA_1.readLine();
         String []partsAux1 = linhaAux1.split(",");
         setName(partsAux1[1]); //método herdado da classe Pokédex
-        setPokemonImage("src/data/images/" + getName().toLowerCase()+".png");
+        setPokemonImage("data/images/" + getName().toLowerCase()+".png");
         setPokemonType1(partsAux1[2]);
         setPokemonType2(partsAux1[3]);
         setHp(Integer.parseInt(partsAux1[5]));

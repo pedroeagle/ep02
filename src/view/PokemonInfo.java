@@ -1,12 +1,9 @@
 package view;
-
-import com.sun.tools.javac.Main;
 import model.*;
-
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class PokemonInfo {
     private JLabel pokemonName;
@@ -47,9 +44,14 @@ public class PokemonInfo {
     private JLabel userExperience;
     private JLabel catchResult;
 
-    Types pokemonInfos = new Types();
+    static Types pokemonInfos = new Types();
     Pokemon pokemonToShow = new Pokemon();
     public PokemonInfo(String pokemon) {
+        try {
+            Login.user.getAllUserData(User.treinador.getName());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         pokemonToShow.setName(pokemon);
         if(pokemonInfos.comparePokemonInfo(pokemon)!=null){
             pokemonToShow = pokemonInfos.comparePokemonInfo(pokemon);
@@ -117,7 +119,7 @@ public class PokemonInfo {
         }
         JFrame pokemonInfo = new JFrame(pokemonToShow.getName());
         pokemonInfo.add(pokemonInfoPanel);
-        pokemonInfo.setLocationRelativeTo(null);
+        pokemonInfo.setLocation(450,250);
         pokemonInfo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pokemonInfo.pack();
         pokemonInfo.setVisible(true);
@@ -137,7 +139,13 @@ public class PokemonInfo {
                         break;
                     case 0:
                         catchResult.setText("Capturou!");
+                        try {
+                            Login.user.getAllUserData(User.treinador.getName());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         userExperience.setText(String.valueOf(User.treinador.getExperience()));
+
                         pokemonInfo.dispose();
                         new PokemonInfo(pokemonToShow.getName());
                         break;

@@ -1,7 +1,4 @@
 package view;
-
-import model.User;
-
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -17,7 +14,7 @@ public class TrainerPokemonsList extends JFrame{
         trainerPokemonsList = new JList(pokemonsList);
         trainerPokemonsListScroll = new JScrollPane(trainerPokemonsList);
         trainerPokemonsListFrame.add(trainerPokemonsListPanel);
-        trainerPokemonsListFrame.setLocationRelativeTo(null);
+        trainerPokemonsListFrame.setLocation(450,250);
         trainerPokemonsListFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         trainerPokemonsListFrame.getContentPane().add(trainerPokemonsListScroll);
         trainerPokemonsListScroll.setPreferredSize(new Dimension(220, 300));

@@ -4,16 +4,17 @@ import org.json.JSONObject;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.BufferedReader;
 import java.io.IOException;
-
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 import java.util.Scanner;
 
 public class AllRequestsThread extends Thread {
+    public String[] getTypes() {
+        return types;
+    }
+
     //GET ALL TYPES FROM API
     String []types = new String[20];
     String [][]typesXpokemons;
@@ -32,7 +33,47 @@ public class AllRequestsThread extends Thread {
     int []hp = new int[949];
     int []weight = new int[949];
     @Override
-    public void run(){
+    public void run() {
+        try {
+            URL urlTypes = new URL("https://pokeapi.co/api/v2/type/");
+
+            HttpURLConnection typesConnection = (HttpURLConnection) urlTypes.openConnection();
+            typesConnection.setRequestMethod("GET");
+            typesConnection.setConnectTimeout(15000);
+            typesConnection.connect();
+
+            if (typesConnection.getResponseCode() != 200) {
+                throw new RuntimeException("HttpResponseCode: " + typesConnection.getResponseCode());
+            } else {
+                Scanner readContent = new Scanner(urlTypes.openStream());
+                StringBuffer getContent = new StringBuffer();
+                while (readContent.hasNext()) {
+                    getContent.append(readContent.nextLine());
+                }
+                String typesContent = new String(getContent.toString());
+                JSONObject typesObject = new JSONObject(typesContent);
+
+                URL urlTypesXPokemons;
+                for (int i = 0; i < 18; i++) {
+                    types[i] = typesObject.getJSONArray("results").getJSONObject(i).getString("name");
+                    for(int j = 0; j < i; j++){
+                        if(types[j].compareTo(types[i]) > 0){
+                            String aux = types[i];
+                            types[i] = types[j];
+                            types[j] = aux;
+                        }
+                    }
+                }
+            }
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    //O OBJETIVO ERA UTILIZAR TODAS AS REQUISOÇÕES ABAIXO PARA TODO O PROGRAMA PORÉM O TEMPO  PARA INCIAR
+    //O PROGRAMA ERA DE APROXIMADAMENTE 5 MINUTOS PORTANTO, UTILIZANDO A API, FIZ A REQUISIÇÃO APENAS DOS TIPOS
+    //COM O CÓDIGO ABAIXO É POSSÍVEL REQUISITAR TODOS OS DADOS DE TODOS OS POKEMONS
+    //INCLUSO A RELAÇÃO ENTRE TIPOS E POKEMONS
+    public void otherRun(){
         try {
             URL urlTypes = new URL("https://pokeapi.co/api/v2/type/");
 
@@ -70,11 +111,9 @@ public class AllRequestsThread extends Thread {
                                 getAllContent.append(readAllContent.nextLine());
                             }
                             JSONObject typesXPokemonsObject = new JSONObject(getAllContent.toString());
-                            //System.out.println(typesXPokemonsObject.toString());
                             typesXpokemons = new String[20][typesXPokemonsObject.getJSONArray("pokemon").length()];
                             for (int j = 0; j < typesXPokemonsObject.getJSONArray("pokemon").length(); j++) {
                                 typesXpokemons[i][j] = typesXPokemonsObject.getJSONArray("pokemon").getJSONObject(j).getJSONObject("pokemon").getString("name");
-                                //System.out.println(typesXpokemons[i][j]);
                             }
                         }
                     } catch (IOException e) {
@@ -154,7 +193,6 @@ public class AllRequestsThread extends Thread {
                     defense [i] = pokemonsObject.getJSONArray("stats").getJSONObject(3).getInt("base_stat");
                     atack[i] = pokemonsObject.getJSONArray("stats").getJSONObject(4).getInt("base_stat");
                     hp[i] = pokemonsObject.getJSONArray("stats").getJSONObject(5).getInt("base_stat");
-
                     weight[i] = pokemonsObject.getInt("weight");
 
                 }
