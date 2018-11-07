@@ -3,7 +3,6 @@ package view;
 import model.Pokedex;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,8 +12,9 @@ public class MainMenu {
     private JButton buttonAllPokemons;
     private JButton buttonMyPokemons;
     private JButton buttonTrainers;
-    private JButton buttonSearch;
+    private JButton buttonSearchPokemons;
     private JButton exitButton;
+    private JButton buttonSearchTypes;
 
     public MainMenu() {
         JFrame mainFrame = new JFrame("Pokédex");
@@ -49,7 +49,7 @@ public class MainMenu {
                 new TrainersList();
             }
         });
-        buttonSearch.addActionListener(new ActionListener() {
+        buttonSearchPokemons.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 new SearchPokemons();
@@ -62,6 +62,12 @@ public class MainMenu {
                 Pokedex.registerError = false;
                 mainFrame.dispose();
                 new Login();
+            }
+        });
+        buttonSearchTypes.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                new SearchTypes();
             }
         });
     }

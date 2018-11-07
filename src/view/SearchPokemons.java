@@ -14,14 +14,12 @@ public class SearchPokemons extends JFrame {
     private JLabel resultText;
 
     public SearchPokemons() {
-        JFrame searchPokemonsFrame = new JFrame("Search");
+        JFrame searchPokemonsFrame = new JFrame("Search: Pokemons");
         searchPokemonsFrame.add(SearchPanel);
         searchPokemonsFrame.setLocation(450, 250);
         searchPokemonsFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        //searchPokemonsFrame.getContentPane().add(searchBox);
         searchPokemonsFrame.pack();
         searchPokemonsFrame.setVisible(true);
-        searchBox.setColumns(50);
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {

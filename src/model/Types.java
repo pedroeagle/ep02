@@ -66,6 +66,28 @@ public class Types{
         }
         return pokemonNames;
     }
+
+    public Object [] comparePokemonTypes2(String type, ArrayList <Pokemon> pokemons){
+       Object[] pokemonNames = new Object[721];
+        int j = 0, k = 0, l = 0;
+        for(int i = 0; i < 721; i++){
+            if(type.equals(pokemons.get(i).getPokemonType1().toLowerCase()) || type.equals(pokemons.get(i).getPokemonType2().toLowerCase())){
+                pokemonNames[l] = (pokemons.get(i).getName());
+                for(j = 0; j < l; j++){
+                    if(pokemonNames[l].toString().compareTo(pokemonNames[k].toString()) > 0){
+                        Object aux = pokemonNames[l];
+                        pokemonNames[l] = pokemonNames[k];
+                        pokemonNames[k] = aux;
+                    }
+                }
+                l++;
+                k++;
+            }
+        }
+        return pokemonNames;
+    }
+
+
     public Pokemon comparePokemonInfo(String name){
         String theName = name.toLowerCase();
         int i;

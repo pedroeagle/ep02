@@ -70,6 +70,14 @@ public class AllRequestsThread extends Thread {
             e.printStackTrace();
         }
     }
+    public boolean existType(String type){
+        for(int i = 0; i < 18; i++){
+            if(types[i].equals(type)){
+                return true;
+            }
+        }
+        return false;
+    }
     //O OBJETIVO ERA UTILIZAR TODAS AS REQUISOÇÕES ABAIXO PARA TODO O PROGRAMA PORÉM O TEMPO  PARA INCIAR
     //O PROGRAMA ERA DE APROXIMADAMENTE 5 MINUTOS PORTANTO, UTILIZANDO A API, FIZ A REQUISIÇÃO APENAS DOS TIPOS
     //COM O CÓDIGO ABAIXO É POSSÍVEL REQUISITAR TODOS OS DADOS DE TODOS OS POKEMONS
