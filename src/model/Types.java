@@ -39,7 +39,6 @@ public class Types{
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (JSONException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
         }

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="15.5" y="665.5">model.Trainer</node>
+    <node x="223.5" y="0.0">view.MainMenu</node>
+    <node x="368.0" y="1407.0">view.MyPokemons</node>
+    <node x="0.0" y="1194.0">model.User</node>
+    <node x="238.5" y="80.0">view.Login</node>
+    <node x="536.0" y="1407.0">view.PokemonInfo</node>
+    <node x="289.5" y="355.0">model.Pokemon</node>
+    <node x="0.0" y="1407.0">view.SearchPokemons</node>
+    <node x="1095.5" y="0.0">model.AllRequestsThread</node>
+    <node x="1027.0" y="1407.0">view.TypesList</node>
+    <node x="868.0" y="1407.0">view.TrainersList</node>
+    <node x="580.5" y="0.0">model.Types</node>
+    <node x="1312.5" y="0.0">view.TrainerPokemonsList</node>
+    <node x="190.0" y="1407.0">view.PokemonTypes</node>
+    <node x="703.0" y="1407.0">view.AllPokemons</node>
+    <node x="179.5" y="160.0">model.Pokedex</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="model.Pokedex" target="view.Login">
+      <point x="0.0" y="-72.5" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="view.Login" target="view.MainMenu">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.Trainer" target="model.Pokedex">
+      <point x="0.0" y="-84.0" />
+      <point x="142.5" y="330.0" />
+      <point x="228.5" y="330.0" />
+      <point x="-49.0" y="72.5" />
+    </edge>
+    <edge source="model.User" target="model.Trainer">
+      <point x="0.0" y="-84.0" />
+      <point x="0.0" y="84.0" />
+    </edge>
+    <edge source="model.Pokemon" target="model.Pokedex">
+      <point x="0.0" y="-394.5" />
+      <point x="412.5" y="330.0" />
+      <point x="326.5" y="330.0" />
+      <point x="49.0" y="72.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="771.6666666666667" y="385.71428571428567" />
+  <SelectedNodes>
+    <node>model.Pokedex</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

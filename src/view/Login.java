@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 
-public class Login{
+public class Login extends MainMenu {
     public JButton loginButton;
     public JPanel loginPanel;
     private JTextField loginUser;

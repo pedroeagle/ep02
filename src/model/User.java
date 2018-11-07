@@ -6,7 +6,7 @@ import org.json.JSONObject;
 import java.io.*;
 import java.util.ArrayList;
 
-public class User{
+public class User extends Trainer {
     public User() {
 
     }

@@ -5,7 +5,7 @@ import view.Login;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Pokedex {
+public class Pokedex extends Login {
     public static boolean loginError = false;
     public static boolean registerError = false;
     public void setName(String name) {

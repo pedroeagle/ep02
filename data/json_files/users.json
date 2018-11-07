@@ -1,5 +1,5 @@
 {
-  "count": 3,
+  "count": 4,
   "users": [
     {
       "pokemons": [],
@@ -9,16 +9,26 @@
       "n": 0
     },
     {
-      "pokemons": [{"name": "Bagon"}],
+      "pokemons": [
+        {"name": "Bagon"},
+        {"name": "Axew"}
+      ],
       "password": "",
       "name": "pedro",
-      "experience": 90,
-      "n": 1
+      "experience": 122,
+      "n": 2
     },
     {
       "pokemons": [],
       "password": "",
       "name": "d",
+      "experience": 60,
+      "n": 0
+    },
+    {
+      "pokemons": [],
+      "password": "",
+      "name": "f",
       "experience": 60,
       "n": 0
     }

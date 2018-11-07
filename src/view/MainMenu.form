@@ -3,30 +3,22 @@
   <grid id="27dc6" binding="main" layout-manager="GridLayoutManager" row-count="3" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="80" left="80" bottom="80" right="80"/>
     <constraints>
-      <xy x="20" y="20" width="662" height="400"/>
+      <xy x="20" y="20" width="682" height="400"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
       <component id="5a87f" class="javax.swing.JButton" binding="buttonTypes">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Types"/>
         </properties>
       </component>
-      <component id="4ab56" class="javax.swing.JButton" binding="buttonAllPokemons">
-        <constraints>
-          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="All Pokemons"/>
-        </properties>
-      </component>
       <component id="f456f" class="javax.swing.JButton" binding="buttonMyPokemons">
         <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="My Pokemons"/>
@@ -34,15 +26,30 @@
       </component>
       <component id="cc9cf" class="javax.swing.JButton" binding="buttonTrainers">
         <constraints>
-          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Trainers"/>
         </properties>
       </component>
+      <vspacer id="ec411">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="50" height="50"/>
+          </grid>
+        </constraints>
+      </vspacer>
+      <component id="4ab56" class="javax.swing.JButton" binding="buttonAllPokemons">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="All Pokemons"/>
+        </properties>
+      </component>
       <component id="d4798" class="javax.swing.JButton" binding="buttonSearch">
         <constraints>
-          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Search"/>
@@ -58,13 +65,6 @@
           <text value="Log out"/>
         </properties>
       </component>
-      <vspacer id="ec411">
-        <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false">
-            <preferred-size width="50" height="50"/>
-          </grid>
-        </constraints>
-      </vspacer>
     </children>
   </grid>
 </form>
