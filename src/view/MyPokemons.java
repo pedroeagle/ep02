@@ -6,10 +6,11 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 
-public class MyPokemons extends JFrame{
+public class MyPokemons extends JFrame {
     private JPanel myPokemonsPanel;
     private JList myPokemonsList;
     private JScrollPane myPokemonsScroll;
+
     MyPokemons() {
         JPanel myPokemonsPanel = new JPanel();
         JFrame myPokemonsFrame = new JFrame("My Pokemons");
@@ -17,7 +18,7 @@ public class MyPokemons extends JFrame{
         myPokemonsList = new JList(User.treinador.getMyPokemons());
         myPokemonsScroll = new JScrollPane(myPokemonsList);
         myPokemonsFrame.add(myPokemonsPanel);
-        myPokemonsFrame.setLocation(450,250);
+        myPokemonsFrame.setLocation(450, 250);
         myPokemonsFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         myPokemonsFrame.getContentPane().add(myPokemonsScroll);
         myPokemonsScroll.setPreferredSize(new Dimension(220, 300));
@@ -32,4 +33,5 @@ public class MyPokemons extends JFrame{
             }
         });
     }
+
 }

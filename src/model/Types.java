@@ -10,10 +10,11 @@ import java.util.Collections;
 
 public class Types{
     String[] types = Pokedex.thread.getTypes();
+    String[] typesObsolete = null;
     private BufferedReader typesJson;
     //O CÓDIGO ABAIXO (dentro do méotod Obsolete) SE TORNOU OBSOLETO POIS A REQUISIÇÃO DE TIPOS AGORA É FEITA
     //POR MEIO DA API
-    void Obsolete() {
+    public String [] Obsolete() {
         {
             try {
                 typesJson = new BufferedReader(new FileReader("data/json_files/types.json"));
@@ -25,12 +26,13 @@ public class Types{
                 JSONArray results = jsonData.getJSONArray("results");
                 for (int i = 0; i < 18; i++) {
                     JSONObject name = results.getJSONObject(i);
-                    types[i] = name.getString("name");
+                    typesObsolete[i] = name.getString("name");
+                    typesObsolete[i] = typesObsolete[i].toLowerCase();
                     for (int j = 0; j < i; j++) {
-                        if (types[j].compareTo(types[i]) > 0) {
-                            String auxStr = types[j];
-                            types[j] = types[i];
-                            types[i] = auxStr;
+                        if (typesObsolete[j].compareTo(typesObsolete[i]) > 0) {
+                            String auxStr = typesObsolete[j];
+                            typesObsolete[j] = typesObsolete[i];
+                            typesObsolete[i] = auxStr;
                         }
                     }
                 }
@@ -39,9 +41,11 @@ public class Types{
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (JSONException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
         }
+        return typesObsolete;
     }
     public Types(){
 

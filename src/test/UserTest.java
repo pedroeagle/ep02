@@ -1,37 +1,31 @@
 package test;
-/*
+
 import model.User;
-import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Assertions;
 
-import static org.junit.Assert.*;
+import java.io.IOException;
 
-@RunWith(Arquillian.class)
-public class UserTest extends User {
-    @Deployment
-    public static JavaArchive createDeployment() {
-        return ShrinkWrap.create(JavaArchive.class)
-                .addClass(model.User.class)
-                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+class UserTest {
+    User u;
+    @org.junit.jupiter.api.BeforeEach //inicializa um objeto da classe em que será feito os testes
+    void setUp() {
+        u = new User();
+    }
+    @org.junit.jupiter.api.Test
+    void createUser() {
+        try {
+            Assertions.assertEquals(true, u.CreateUser("",""));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    @org.junit.Before
-    public void setUp() throws Exception {
+    @org.junit.jupiter.api.Test
+    void loginUser() {
+        try {
+            Assertions.assertEquals(true, u.LoginUser("", ""));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-
-    @org.junit.Test
-    public void createUser() {
-    }
-
-    @org.junit.Test
-    public void loginUser() {
-    }
-
-    @org.junit.Test
-    public void getTrainerPokemons() {
-    }
-}*/
+}

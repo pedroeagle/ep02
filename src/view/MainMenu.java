@@ -3,6 +3,7 @@ package view;
 import model.Pokedex;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,12 +16,12 @@ public class MainMenu {
     private JButton buttonSearch;
     private JButton exitButton;
 
-    public MainMenu(){
+    public MainMenu() {
         JFrame mainFrame = new JFrame("Pokédex");
-        if(main != null) {
+        if (main != null) {
             mainFrame.add(main);
         }
-        mainFrame.setLocation(450,250);
+        mainFrame.setLocation(450, 250);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.pack();
         mainFrame.setVisible(true);
@@ -64,4 +65,5 @@ public class MainMenu {
             }
         });
     }
+
 }

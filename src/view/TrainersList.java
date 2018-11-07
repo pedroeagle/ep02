@@ -5,20 +5,20 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 
-public class TrainersList extends JFrame{
+public class TrainersList extends JFrame {
     private JList trainersList;
     private JPanel trainersListPanel;
     private JScrollPane trainersListScroll;
-    public Object []names;
+    public Object[] names;
 
-    public TrainersList(){
+    public TrainersList() {
         JFrame trainersListFrame = new JFrame("Trainers");
         trainersList = new JList(User.treinador.getTrainerNames());
         trainersListScroll = new JScrollPane(trainersList);
-        if(trainersListPanel!=null) {
+        if (trainersListPanel != null) {
             trainersListFrame.add(trainersListPanel);
         }
-        trainersListFrame.setLocation(450,250);
+        trainersListFrame.setLocation(450, 250);
         trainersListFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         trainersListFrame.getContentPane().add(trainersListScroll);
         trainersListScroll.setPreferredSize(new Dimension(220, 300));

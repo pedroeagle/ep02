@@ -1,6 +1,7 @@
 package view;
 import model.*;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -45,7 +46,8 @@ public class PokemonInfo {
     private JLabel catchResult;
 
     static Types pokemonInfos = new Types();
-    Pokemon pokemonToShow = new Pokemon();
+    public static Pokemon pokemonToShow = new Pokemon();
+
     public PokemonInfo(String pokemon) {
         try {
             Login.user.getAllUserData(User.treinador.getName());
@@ -53,15 +55,13 @@ public class PokemonInfo {
             e.printStackTrace();
         }
         pokemonToShow.setName(pokemon);
-        if(pokemonInfos.comparePokemonInfo(pokemon)!=null){
+        if (pokemonInfos.comparePokemonInfo(pokemon) != null) {
             pokemonToShow = pokemonInfos.comparePokemonInfo(pokemon);
-        }
-
-        else{
+        } else {
             System.out.println("Erro NullPointer");
             new MainMenu();
         }
-        if(pokemonToShow.getName() != null) {
+        if (pokemonToShow.getName() != null) {
             pokemonName.setText(pokemonToShow.getName());
         }
         if (pokemonToShow.getPokemonType1().length() == 0) {
@@ -89,8 +89,7 @@ public class PokemonInfo {
 
         if (pokemonToShow.getLegendary().equals("True")) {
             pokemonLegendary.setText("This pokemon is Legendary");
-        }
-        else{
+        } else {
             pokemonLegendary.setText("");
         }
         pokemonHp.setText(String.valueOf(pokemonToShow.getHp()));
@@ -98,7 +97,7 @@ public class PokemonInfo {
         pokemonDefense.setText(String.valueOf(pokemonToShow.getDefense()));
         pokemonSpAtack.setText(String.valueOf(pokemonToShow.getSpAtk()));
         pokemonSpDefense.setText(String.valueOf(pokemonToShow.getSpDef()));
-        pokemonGeneration.setText(String.valueOf(pokemonToShow.getGeneration()+"º generation"));
+        pokemonGeneration.setText(String.valueOf(pokemonToShow.getGeneration() + "º generation"));
         pokemonSpeed.setText(String.valueOf(pokemonToShow.getSpeed()));
         pokemonHeight.setText(String.valueOf(pokemonToShow.getHeight()));
         pokemonWeight.setText(String.valueOf(pokemonToShow.getWeight()));
@@ -121,14 +120,14 @@ public class PokemonInfo {
         }
         JFrame pokemonInfo = new JFrame(pokemonToShow.getName());
         pokemonInfo.add(pokemonInfoPanel);
-        pokemonInfo.setLocation(450,250);
+        pokemonInfo.setLocation(450, 250);
         pokemonInfo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pokemonInfo.pack();
         pokemonInfo.setVisible(true);
         catchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                switch(Types.caso = Login.user.tryToCatch(pokemonName.getText(), User.treinador.getName(), pokemonToShow.getExperience())) {
+                switch (Types.caso = Login.user.tryToCatch(pokemonName.getText(), User.treinador.getName(), pokemonToShow.getExperience())) {
                     case 1:
                         catchResult.setText("Você já tem este pokemon!");
                         pokemonInfo.dispose();
@@ -156,4 +155,5 @@ public class PokemonInfo {
             }
         });
     }
+
 }

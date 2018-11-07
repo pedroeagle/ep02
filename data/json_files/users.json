@@ -2,21 +2,18 @@
   "count": 4,
   "users": [
     {
-      "pokemons": [],
+      "pokemons": [{"name": "Bagon"}],
       "password": "",
       "name": "",
-      "experience": 60,
-      "n": 0
+      "experience": 90,
+      "n": 1
     },
     {
-      "pokemons": [
-        {"name": "Bagon"},
-        {"name": "Axew"}
-      ],
+      "pokemons": [{"name": "Bagon"}],
       "password": "",
       "name": "pedro",
-      "experience": 122,
-      "n": 2
+      "experience": 90,
+      "n": 1
     },
     {
       "pokemons": [],
@@ -28,7 +25,7 @@
     {
       "pokemons": [],
       "password": "",
-      "name": "f",
+      "name": "pedrow",
       "experience": 60,
       "n": 0
     }

@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 
-public class Login extends MainMenu {
+public class Login {
     public JButton loginButton;
     public JPanel loginPanel;
     private JTextField loginUser;
@@ -18,15 +18,17 @@ public class Login extends MainMenu {
     private JButton registerButton;
     private JLabel textRegisterError;
     public static User user = new User();
-    public Login(){
+
+    public Login() {
         JFrame login = new JFrame("Login");
-        login.setContentPane(loginPanel);
-        login.setLocation(450,250);
-        if(Pokedex.registerError){
+        if(login!=null) {
+            login.setContentPane(loginPanel);
+            login.setLocation(450, 250);
+        }
+        if (Pokedex.registerError) {
             textRegisterError.setText("Este usuário já existe. Tente novamente.");
             textRegisterError.setForeground(Color.RED);
-        }
-        else if(Pokedex.loginError){
+        } else if (Pokedex.loginError) {
             textRegisterError.setText("<html><body>Senha/Usuário incorretos.<br> Tente novamente ou registre um novo usuário.</body></html>");
             textRegisterError.setForeground(Color.RED);
         }
@@ -37,12 +39,11 @@ public class Login extends MainMenu {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
-                    if(user.LoginUser(loginUser.getText(), loginPassword.getText())){
+                    if (user.LoginUser(loginUser.getText(), loginPassword.getText())) {
                         user.getAllUserData(loginUser.getText());
                         new MainMenu();
                         login.dispose();
-                    }
-                    else{
+                    } else {
                         Pokedex.registerError = false;
                         Pokedex.loginError = true;
                         login.dispose();
@@ -58,13 +59,12 @@ public class Login extends MainMenu {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
-                    if(user.CreateUser(loginUser.getText(), loginPassword.getText())){
+                    if (user.CreateUser(loginUser.getText(), loginPassword.getText())) {
                         login.dispose();
                         Pokedex.registerError = true;
                         Pokedex.loginError = false;
                         new Login();
-                    }
-                    else{
+                    } else {
                         user.getAllUserData(loginUser.getText());
                         login.dispose();
                         new MainMenu();
@@ -75,4 +75,5 @@ public class Login extends MainMenu {
             }
         });
     }
+
 }

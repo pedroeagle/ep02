@@ -5,11 +5,12 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
 
-public class PokemonTypes extends JFrame{
+public class PokemonTypes extends JFrame {
     public JPanel pokemonsTypesPanel;
     public JList pokemonTypesList;
     private JScrollPane pokemonTypesScroll;
-    public PokemonTypes(){
+
+    public PokemonTypes() {
 
         pokemonTypesList.addComponentListener(new ComponentAdapter() {
         });
@@ -17,15 +18,15 @@ public class PokemonTypes extends JFrame{
         });
     }
 
-    public PokemonTypes(String type, Object[] listNames){
-        JFrame pokemonTypesFrame = new JFrame("Type: "+type);
+    public PokemonTypes(String type, Object[] listNames) {
+        JFrame pokemonTypesFrame = new JFrame("Type: " + type);
         pokemonTypesList = new JList(listNames);
         pokemonTypesScroll = new JScrollPane(pokemonTypesList);
         if (pokemonsTypesPanel != null) {
             pokemonTypesFrame.add(pokemonsTypesPanel);
         }
 
-        pokemonTypesFrame.setLocation(450,250);
+        pokemonTypesFrame.setLocation(450, 250);
         pokemonTypesFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pokemonTypesFrame.getContentPane().add(pokemonTypesScroll);
         pokemonTypesScroll.setPreferredSize(new Dimension(220, 300));

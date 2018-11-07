@@ -13,12 +13,13 @@ public class AllPokemons {
     private JPanel AllPokemonsPanel;
 
     Types allPokemonNames = new Types();
-    AllPokemons(){
-        JFrame allPokemonsFrame = new JFrame("All Pokemons");
+
+    AllPokemons() {
+        JFrame allPokemonsFrame = new JFrame("Search");
         pokemonsList = new JList(allPokemonNames.getAllPokemonNames().toArray());
         pokemonsScroll = new JScrollPane(pokemonsList);
 
-        allPokemonsFrame.setLocation(450,250);
+        allPokemonsFrame.setLocation(450, 250);
         allPokemonsFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         allPokemonsFrame.getContentPane().add(pokemonsScroll);
         pokemonsScroll.setPreferredSize(new Dimension(220, 300));
@@ -34,4 +35,5 @@ public class AllPokemons {
             }
         });
     }
+
 }
