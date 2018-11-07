@@ -46,9 +46,10 @@ public class PokemonInfo {
     private JLabel catchResult;
 
     static Types pokemonInfos = new Types();
-    public static Pokemon pokemonToShow = new Pokemon();
+    public static Pokemon pokemonToShow;
 
     public PokemonInfo(String pokemon) {
+        pokemonToShow = new Pokemon();
         try {
             Login.user.getAllUserData(User.treinador.getName());
         } catch (IOException e) {

@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="049bb82f-b466-4f03-93f8-06b9df01c7ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/ep02/model/Types.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ep02/model/Types.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ep02/view/PokemonInfo$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ep02/view/PokemonInfo$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ep02/view/PokemonInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ep02/view/PokemonInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Types.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PokemonInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PokemonInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/TypesList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TypesList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/json_files/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/json_files/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Pokedex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pokedex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/AllPokemons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AllPokemons.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/production/ep02/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,37 +23,38 @@
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.57" value="1" />
           <entry key="project.open.time.65" value="2" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="form" value="3" />
-          <entry key="java" value="34" />
+          <entry key="java" value="37" />
           <entry key="uml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="GUI_DESIGNER_FORM" value="3" />
-          <entry key="JAVA" value="34" />
+          <entry key="JAVA" value="37" />
           <entry key="UML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="610" />
+          <entry key="java" value="645" />
           <entry key="txt" value="143" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="610" />
+          <entry key="JAVA" value="645" />
           <entry key="PLAIN_TEXT" value="143" />
         </counts>
       </usages-collector>
@@ -89,8 +87,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Pokemon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1371">
+            <state relative-caret-position="-795">
               <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/Pokedex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="38" column="36" lean-forward="true" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -98,7 +105,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Types.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-330">
+            <state relative-caret-position="75">
               <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
@@ -107,8 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/view/PokemonInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+            <state relative-caret-position="210">
+              <caret line="55" column="9" lean-forward="true" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -132,7 +139,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/view/MainMenu.form" />
         <option value="$PROJECT_DIR$/src/view/MainMenu.java" />
-        <option value="$PROJECT_DIR$/src/view/AllPokemons.java" />
         <option value="$PROJECT_DIR$/src/view/MyPokemons.java" />
         <option value="$PROJECT_DIR$/src/view/SearchPokemons.java" />
         <option value="$PROJECT_DIR$/src/view/TrainerPokemonsList.java" />
@@ -147,6 +153,8 @@
         <option value="$PROJECT_DIR$/src/view/PokemonInfo.java" />
         <option value="$PROJECT_DIR$/src/model/Types.java" />
         <option value="$PROJECT_DIR$/src/test/AllRequestsThreadTest.java" />
+        <option value="$PROJECT_DIR$/src/view/AllPokemons.java" />
+        <option value="$PROJECT_DIR$/src/model/Pokedex.java" />
       </list>
     </option>
   </component>
@@ -162,7 +170,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="18" />
     <option name="y" value="65" />
     <option name="width" value="1330" />
@@ -313,17 +321,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="Pokedex" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="ep02" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -340,6 +337,28 @@
               <item name="Pokedex" type="58d84e3e:PackageViewProjectNode" />
               <item name="ep02" type="616d4139:PackageViewModuleNode" />
               <item name="test" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Pokedex" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ep02" type="616d4139:PackageViewModuleNode" />
+              <item name="view" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Pokedex" type="58d84e3e:PackageViewProjectNode" />
+              <item name="ep02" type="616d4139:PackageViewModuleNode" />
+              <item name="view" type="1f31426a:PackageElementNode" />
+              <item name="TypesList" type="e9f4de52:FormNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="Pokedex" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="ep02" type="2674bda8:ScopeViewTreeModel$GroupNode" />
             </path>
           </expand>
           <select />
@@ -365,7 +384,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541614050866" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541618712780" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="model.User" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -399,7 +418,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserTest.createUser">
+  <component name="RunManager" selected="Application.Pokedex">
     <configuration name="Pokedex" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="model.Pokedex" />
       <module name="ep02" />
@@ -509,6 +528,7 @@
       <workItem from="1541609816867" duration="1723000" />
       <workItem from="1541611590318" duration="337000" />
       <workItem from="1541612049356" duration="1979000" />
+      <workItem from="1541618298348" duration="301000" />
     </task>
     <task id="LOCAL-00001" summary="Correção de alguns erros.">
       <created>1541604638765</created>
@@ -542,9 +562,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PokedexTest - 2018.11.07 at 15h 51m 06s.xml">
-      <configuration name="PokedexTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AllRequestsThreadTest - 2018.11.07 at 15h 58m 00s.xml">
       <configuration name="AllRequestsThreadTest" configurationId="JUnit" />
     </history-entry>
@@ -572,9 +589,12 @@
     <history-entry file="UserTest_createUser - 2018.11.07 at 16h 05m 08s.xml">
       <configuration name="UserTest.createUser" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="UserTest_createUser - 2018.11.07 at 17h 20m 49s.xml">
+      <configuration name="UserTest.createUser" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13901000" />
+    <option name="totallyTimeSpent" value="14202000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -589,7 +609,7 @@
     <frame x="-1" y="26" width="1368" height="747" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2977273" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30227274" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -644,13 +664,6 @@
     <entry file="file://$PROJECT_DIR$/src/view/Login.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/AllPokemons.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/MainMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
@@ -693,16 +706,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/TypesList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/PokemonInfoTest.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/PokemonInfoTest.java" />
     <entry file="file://$PROJECT_DIR$/src/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -717,54 +721,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Pokedex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/PokedexTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" column="94" lean-forward="true" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
-          <folding>
-            <element signature="e#274#275#0" expanded="true" />
-            <element signature="e#306#307#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#403#404#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Trainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/AllRequestsThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Types.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-330">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Pokemon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1371">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/PokedexTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/AllRequestsThreadTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -784,10 +741,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/AllRequestsThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Types.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/AllPokemons.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/TypesList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Trainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Pokemon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-795">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Pokedex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="38" column="36" lean-forward="true" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/PokemonInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+        <state relative-caret-position="210">
+          <caret line="55" column="9" lean-forward="true" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
         </state>
       </provider>
     </entry>

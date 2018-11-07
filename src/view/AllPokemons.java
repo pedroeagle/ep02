@@ -15,7 +15,7 @@ public class AllPokemons {
     Types allPokemonNames = new Types();
 
     AllPokemons() {
-        JFrame allPokemonsFrame = new JFrame("Search");
+        JFrame allPokemonsFrame = new JFrame("All Pokemons");
         pokemonsList = new JList(allPokemonNames.getAllPokemonNames().toArray());
         pokemonsScroll = new JScrollPane(pokemonsList);
 
