@@ -17,10 +17,14 @@ public class Login {
     private JPasswordField loginPassword;
     private JButton registerButton;
     private JLabel textRegisterError;
+    private JLabel textSenha;
+    private JLabel textUsuario;
     public static User user = new User();
 
     public Login() {
         JFrame login = new JFrame("Login");
+        textSenha.setForeground(Color.WHITE);
+        textUsuario.setForeground(Color.WHITE);
         if(login!=null) {
             login.setContentPane(loginPanel);
             login.setLocation(450, 250);

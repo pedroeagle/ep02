@@ -31,7 +31,7 @@ Abra o terminal e digite
 > mkdir Pokedex
 
 
-para criar diretório.
+para criar um diretório.
 
 Digite
 
@@ -95,7 +95,7 @@ Nas próximas sessões, preencha os campos de usuário e senha e clique em "Logi
 5º passo: Já é possível visualizar a tela de menus da nossa Pokédex.
 
 
-![alt](readme_images/step5.png)
+![alt](readme_images/step6.png)
 
 
 ### Funcionalidades
@@ -156,7 +156,7 @@ No canto superior esquerdo selecione Project.
 ![alt](readme_images/erro1.png)
 
 
-Abra o diretório "lib", clique com o botão direito sobre cada arquivo presente neste diretório e selecione "Add as Library".
+Expanda diretório "lib" clicando na setinha, clique com o botão direito sobre cada arquivo presente neste diretório e selecione "Add as Library".
 
 
 ![alt](readme_images/erro2.png)
