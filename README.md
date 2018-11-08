@@ -24,8 +24,8 @@ com o e-mail de uma Universidade.
 - Um terminal (Linux e MacOS) ou o cmd (Windows).
 - Ter a ferramenta de controle de versão GIT mais atual instalada. Você pode instalar por meio desse link: https://git-scm.com/downloads
 
-### Como instalar (Linux e MacOS):
-Abra o terminal e digite
+### Como instalar:
+Abra o terminal ou cmd e digite
 
 
 > mkdir Pokedex
@@ -57,12 +57,7 @@ Após realizar o procedimento acima seu terminal deve mostrar uma mensagem como 
 
 Se você recebeu uma mensagem como a da imagem, pule para a parte de "Como utilizar". Se não, verifique novamente os "Requisitos".
 
-
-### Como instalar (Windows):
-
-
-
-### Como utilizar (Todos os SO's)
+### Como utilizar:
 
 
 1º passo: Abra o Idea Intellij e clique em "Open".
@@ -163,7 +158,9 @@ Expanda diretório "lib" clicando na setinha, clique com o botão direito sobre 
 
 
 Se ainda assim os erros persistirem, baixe o zip do programa aqui: 
+
 https://unbbr-my.sharepoint.com/:f:/g/personal/pedroigor_aluno_unb_br/EtjqTzagbsFJrmq_qU76V-0BX0wU-6IAzPuaNsZebq9kKA?e=tcZG9y
+
 Descompacte na pasta que criamos e vá para o tópico "Como utilizar".
 
 ### Bugs:

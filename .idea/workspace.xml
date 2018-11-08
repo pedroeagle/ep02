@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="049bb82f-b466-4f03-93f8-06b9df01c7ce" name="Default Changelist" comment="Melhorias no design do MainMenu. Adição da pesquisa por tipos." />
+    <list default="true" id="049bb82f-b466-4f03-93f8-06b9df01c7ce" name="Default Changelist" comment="Melhorias no design do MainMenu. Adição da pesquisa por tipos.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/production/ep02/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,7 +15,7 @@
     <session id="-820185870">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="2" />
@@ -411,7 +413,7 @@
                   <point x="38.5" y="26.5" />
                 </edge>
               </edges>
-              <settings layout="Hierarchic Group" zoom="0.30000000000000016" x="495.0" y="1716.6666666666665" />
+              <settings layout="Hierarchic Group" zoom="0.30000000000000016" x="495.0" y="2049.9999999999995" />
               <SelectedNodes />
               <Categories>
                 <Category>Fields</Category>
@@ -485,7 +487,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="18" />
     <option name="y" value="65" />
     <option name="width" value="1330" />
@@ -863,7 +865,7 @@
       <workItem from="1541612049356" duration="1979000" />
       <workItem from="1541618298348" duration="827000" />
       <workItem from="1541628148205" duration="4768000" />
-      <workItem from="1541638580299" duration="1915000" />
+      <workItem from="1541638580299" duration="2204000" />
     </task>
     <task id="LOCAL-00001" summary="Correção de alguns erros.">
       <created>1541604638765</created>
@@ -943,7 +945,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21411000" />
+    <option name="totallyTimeSpent" value="21700000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -955,8 +957,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="26" width="1368" height="747" extended-state="7" />
-    <editor active="true" />
+    <frame x="-1" y="26" width="1368" height="747" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3121212" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -967,7 +968,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956383" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3231018" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3231018" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3990307" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1539,7 +1540,7 @@
               <point x="38.5" y="26.5" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.30000000000000016" x="495.0" y="1716.6666666666665" />
+          <settings layout="Hierarchic Group" zoom="0.30000000000000016" x="495.0" y="2049.9999999999995" />
           <SelectedNodes />
           <Categories>
             <Category>Fields</Category>
