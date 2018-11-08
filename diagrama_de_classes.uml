@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="1196.3131875840218" y="1994.0">model.Trainer</node>
+    <node x="569.0790605998948" y="1378.0">view.MainMenu</node>
+    <node x="361.6507088590437" y="2419.0">test.UserTest</node>
+    <node x="0.0" y="1045.5">view.MyPokemons</node>
+    <node x="268.6507088590437" y="2153.0">model.User</node>
+    <node x="372.6507088590437" y="1528.0">view.Login</node>
+    <node x="411.99999999999994" y="852.0">view.PokemonInfo</node>
+    <node x="1231.835914856749" y="0.0">model.Pokemon</node>
+    <node x="764.3214285714286" y="1832.5">test.AllRequestsThreadTest</node>
+    <node x="477.74999999999994" y="1034.0">view.SearchPokemons</node>
+    <node x="829.5586751211762" y="1528.0">model.AllRequestsThread</node>
+    <node x="915.8086751211762" y="1172.0">view.TypesList</node>
+    <node x="240.25" y="1206.5">view.TrainersList</node>
+    <node x="1211.510684531518" y="1230.0">view.SearchTypes</node>
+    <node x="543.8214285714287" y="545.0">model.Types</node>
+    <node x="176.75" y="1034.0">view.TrainerPokemonsList</node>
+    <node x="1017.4336751211762" y="999.0">view.PokemonTypes</node>
+    <node x="675.75" y="1045.5">view.AllPokemons</node>
+    <node x="1160.8131875840218" y="1751.0">model.Pokedex</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="view.MyPokemons" target="model.Types">
+      <point x="0.0" y="-15.0" />
+      <point x="61.5" y="979.0" />
+      <point x="46.5" y="979.0" />
+      <point x="46.5" y="802.0" />
+      <point x="594.1785714285716" y="802.0" />
+      <point x="-184.6428571428571" y="108.5" />
+    </edge>
+    <edge source="view.TrainersList" target="model.User">
+      <point x="-51.33333333333337" y="38.5" />
+      <point x="265.91666666666663" y="1358.0" />
+      <point x="144.5" y="1358.0" />
+      <point x="144.5" y="2113.0" />
+      <point x="370.4364231447579" y="2113.0" />
+      <point x="-40.71428571428578" y="-108.0" />
+    </edge>
+    <edge source="view.PokemonInfo" target="model.Types">
+      <point x="88.0" y="-38.5" />
+      <point x="610.0" y="832.0" />
+      <point x="694.8928571428573" y="832.0" />
+      <point x="-83.92857142857133" y="108.5" />
+    </edge>
+    <edge source="model.Pokedex" target="model.Pokemon">
+      <point x="27.75" y="-96.5" />
+      <point x="1318.0631875840218" y="1691.0" />
+      <point x="1361.1892559600897" y="1691.0" />
+      <point x="1361.1892559600897" y="515.0" />
+      <point x="1320.335914856749" y="515.0" />
+      <point x="0.0" y="222.5" />
+    </edge>
+    <edge source="view.SearchTypes" target="model.Types">
+      <point x="-15.0" y="-15.0" />
+      <point x="1256.510684531518" y="1147.0" />
+      <point x="1275.9336751211763" y="1147.0" />
+      <point x="1275.9336751211763" y="802.0" />
+      <point x="929.8928571428571" y="802.0" />
+      <point x="151.07142857142844" y="108.5" />
+    </edge>
+    <edge source="view.TrainersList" target="view.Login">
+      <point x="0.0" y="38.5" />
+      <point x="317.25" y="1498.0" />
+      <point x="438.6507088590437" y="1498.0" />
+      <point x="-22.0" y="-61.5" />
+    </edge>
+    <edge source="view.AllPokemons" target="view.PokemonInfo">
+      <point x="-40.0" y="-15.0" />
+      <point x="695.75" y="959.0" />
+      <point x="595.3333333333333" y="959.0" />
+      <point x="73.33333333333326" y="38.5" />
+    </edge>
+    <edge source="view.AllPokemons" target="model.Types">
+      <point x="40.0" y="-15.0" />
+      <point x="775.75" y="979.0" />
+      <point x="761.25" y="979.0" />
+      <point x="-16.785714285714448" y="108.5" />
+    </edge>
+    <edge source="view.PokemonInfo" target="model.Pokemon">
+      <point x="-88.0" y="-38.5" />
+      <point x="433.99999999999994" y="782.0" />
+      <point x="450.49999999999994" y="782.0" />
+      <point x="450.49999999999994" y="495.0" />
+      <point x="1239.8813694022035" y="495.0" />
+      <point x="-80.45454545454544" y="222.5" />
+    </edge>
+    <edge source="view.Login" target="model.Pokedex">
+      <point x="66.0" y="61.5" />
+      <point x="526.6507088590437" y="1711.0" />
+      <point x="1188.5631875840218" y="1711.0" />
+      <point x="-101.75" y="-96.5" />
+    </edge>
+    <edge source="view.MyPokemons" target="view.PokemonInfo">
+      <point x="41.0" y="-15.0" />
+      <point x="102.5" y="949.0" />
+      <point x="424.2222222222221" y="949.0" />
+      <point x="-97.77777777777783" y="38.5" />
+    </edge>
+    <edge source="view.SearchTypes" target="model.Pokemon">
+      <point x="45.0" y="-15.0" />
+      <point x="1316.510684531518" y="1147.0" />
+      <point x="1322.0515025098375" y="1147.0" />
+      <point x="1322.0515025098375" y="525.0" />
+      <point x="1304.2450057658398" y="525.0" />
+      <point x="-16.090909090909122" y="222.5" />
+    </edge>
+    <edge source="view.MyPokemons" target="model.User">
+      <point x="-30.75" y="15.0" />
+      <point x="30.75" y="2133.0" />
+      <point x="289.00785171618656" y="2133.0" />
+      <point x="-122.14285714285711" y="-108.0" />
+    </edge>
+    <edge source="view.MainMenu" target="view.MyPokemons">
+      <point x="-51.714285714285666" y="-50.0" />
+      <point x="607.8647748856091" y="1348.0" />
+      <point x="479.56737552571036" y="1348.0" />
+      <point x="479.56737552571036" y="1147.0" />
+      <point x="92.25" y="1147.0" />
+      <point x="30.75" y="15.0" />
+    </edge>
+    <edge source="view.Login" target="view.MainMenu">
+      <point x="22.0" y="-61.5" />
+      <point x="482.6507088590437" y="1498.0" />
+      <point x="599.2457272665614" y="1498.0" />
+      <point x="-60.33333333333337" y="50.0" />
+    </edge>
+    <edge source="view.PokemonInfo" target="model.User">
+      <point x="-73.33333333333337" y="38.5" />
+      <point x="448.6666666666666" y="959.0" />
+      <point x="133.5" y="959.0" />
+      <point x="133.5" y="2123.0" />
+      <point x="329.72213743047223" y="2123.0" />
+      <point x="-81.42857142857144" y="-108.0" />
+    </edge>
+    <edge source="view.MainMenu" target="view.SearchPokemons">
+      <point x="-25.857142857142776" y="-50.0" />
+      <point x="633.721917742752" y="1338.0" />
+      <point x="566.25" y="1338.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="model.Types" target="model.Pokedex">
+      <point x="218.21428571428555" y="108.5" />
+      <point x="997.0357142857142" y="782.0" />
+      <point x="1350.1892559600897" y="782.0" />
+      <point x="1350.1892559600897" y="1681.0" />
+      <point x="1299.5631875840218" y="1681.0" />
+      <point x="9.25" y="-96.5" />
+    </edge>
+    <edge source="view.TrainerPokemonsList" target="view.PokemonInfo">
+      <point x="0.0" y="-26.5" />
+      <point x="317.25" y="979.0" />
+      <point x="497.5555555555555" y="979.0" />
+      <point x="-24.444444444444457" y="38.5" />
+    </edge>
+    <edge source="view.Login" target="model.User">
+      <point x="-66.0" y="61.5" />
+      <point x="394.6507088590437" y="1731.0" />
+      <point x="411.1507088590437" y="1731.0" />
+      <point x="0.0" y="-108.0" />
+    </edge>
+    <edge source="test.AllRequestsThreadTest" target="model.Types">
+      <point x="-44.25" y="-15.0" />
+      <point x="808.5714285714286" y="832.0" />
+      <point x="795.6071428571429" y="832.0" />
+      <point x="16.78571428571422" y="108.5" />
+    </edge>
+    <edge source="view.SearchTypes" target="model.Pokedex">
+      <point x="30.0" y="15.0" />
+      <point x="1301.510684531518" y="1671.0" />
+      <point x="1281.0631875840218" y="1671.0" />
+      <point x="-9.25" y="-96.5" />
+    </edge>
+    <edge source="view.SearchTypes" target="view.PokemonTypes">
+      <point x="-45.0" y="-15.0" />
+      <point x="1226.510684531518" y="1147.0" />
+      <point x="1203.4336751211763" y="1147.0" />
+      <point x="62.0" y="61.5" />
+    </edge>
+    <edge source="view.PokemonTypes" target="view.PokemonInfo">
+      <point x="0.0" y="-61.5" />
+      <point x="1141.4336751211763" y="949.0" />
+      <point x="619.7777777777778" y="949.0" />
+      <point x="97.77777777777783" y="38.5" />
+    </edge>
+    <edge source="model.Trainer" target="model.Pokedex">
+      <point x="0.0" y="-49.5" />
+      <point x="0.0" y="96.5" />
+    </edge>
+    <edge source="model.User" target="model.Trainer">
+      <point x="81.42857142857144" y="-108.0" />
+      <point x="492.5792802876151" y="2123.0" />
+      <point x="1243.3131875840218" y="2123.0" />
+      <point x="-47.0" y="49.5" />
+    </edge>
+    <edge source="view.PokemonInfo" target="view.MainMenu">
+      <point x="48.888888888888914" y="38.5" />
+      <point x="570.8888888888889" y="969.0" />
+      <point x="665.25" y="969.0" />
+      <point x="665.25" y="1358.0" />
+      <point x="659.5790605998948" y="1358.0" />
+      <point x="0.0" y="-50.0" />
+    </edge>
+    <edge source="model.Pokemon" target="model.Pokedex">
+      <point x="32.18181818181813" y="222.5" />
+      <point x="1352.5177330385673" y="495.0" />
+      <point x="1383.1892559600897" y="495.0" />
+      <point x="1383.1892559600897" y="1711.0" />
+      <point x="1355.0631875840218" y="1711.0" />
+      <point x="64.75" y="-96.5" />
+    </edge>
+    <edge source="model.Pokedex" target="model.AllRequestsThread">
+      <point x="-64.75" y="-96.5" />
+      <point x="1225.5631875840218" y="1691.0" />
+      <point x="1005.3920084545096" y="1691.0" />
+      <point x="70.33333333333331" y="61.5" />
+    </edge>
+    <edge source="view.TrainersList" target="view.TrainerPokemonsList">
+      <point x="0.0" y="-38.5" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="test.UserTest" target="model.User">
+      <point x="-24.75" y="-15.0" />
+      <point x="386.4007088590437" y="2394.0" />
+      <point x="339.9007088590437" y="2394.0" />
+      <point x="-71.25" y="108.0" />
+    </edge>
+    <edge source="view.MainMenu" target="view.SearchTypes">
+      <point x="77.57142857142856" y="-50.0" />
+      <point x="737.1504891713233" y="1358.0" />
+      <point x="1241.510684531518" y="1358.0" />
+      <point x="-30.0" y="15.0" />
+    </edge>
+    <edge source="view.TypesList" target="model.Types">
+      <point x="-73.125" y="-73.0" />
+      <point x="940.1836751211762" y="1147.0" />
+      <point x="965.8846161554503" y="1147.0" />
+      <point x="965.8846161554503" y="832.0" />
+      <point x="829.1785714285716" y="832.0" />
+      <point x="50.35714285714289" y="108.5" />
+    </edge>
+    <edge source="view.SearchPokemons" target="view.PokemonInfo">
+      <point x="44.25" y="-26.5" />
+      <point x="610.5" y="979.0" />
+      <point x="546.4444444444443" y="979.0" />
+      <point x="24.444444444444457" y="38.5" />
+    </edge>
+    <edge source="model.Types" target="model.Pokemon">
+      <point x="-117.5" y="-108.5" />
+      <point x="661.3214285714287" y="515.0" />
+      <point x="1272.0631875840218" y="515.0" />
+      <point x="-48.27272727272725" y="222.5" />
+    </edge>
+    <edge source="view.MainMenu" target="view.TypesList">
+      <point x="51.71428571428578" y="-50.0" />
+      <point x="711.2933463141806" y="1348.0" />
+      <point x="964.5586751211762" y="1348.0" />
+      <point x="-48.75" y="73.0" />
+    </edge>
+    <edge source="view.MainMenu" target="view.Login">
+      <point x="0.0" y="50.0" />
+      <point x="659.5790605998948" y="1508.0" />
+      <point x="526.6507088590437" y="1508.0" />
+      <point x="66.0" y="-61.5" />
+    </edge>
+    <edge source="view.TypesList" target="model.Pokedex">
+      <point x="48.75" y="73.0" />
+      <point x="1062.0586751211763" y="1671.0" />
+      <point x="1262.5631875840218" y="1671.0" />
+      <point x="-27.75" y="-96.5" />
+    </edge>
+    <edge source="model.Pokedex" target="view.Login">
+      <point x="-120.25" y="-96.5" />
+      <point x="1170.0631875840218" y="1721.0" />
+      <point x="482.6507088590437" y="1721.0" />
+      <point x="22.0" y="61.5" />
+    </edge>
+    <edge source="view.MainMenu" target="model.Pokedex">
+      <point x="60.33333333333337" y="50.0" />
+      <point x="719.9123939332281" y="1508.0" />
+      <point x="1051.0586751211763" y="1508.0" />
+      <point x="1051.0586751211763" y="1681.0" />
+      <point x="1244.0631875840218" y="1681.0" />
+      <point x="-46.25" y="-96.5" />
+    </edge>
+    <edge source="view.TypesList" target="view.PokemonTypes">
+      <point x="73.125" y="-73.0" />
+      <point x="1086.4336751211763" y="1147.0" />
+      <point x="1079.4336751211763" y="1147.0" />
+      <point x="-62.0" y="61.5" />
+    </edge>
+    <edge source="view.PokemonInfo" target="view.Login">
+      <point x="-48.888888888888914" y="38.5" />
+      <point x="473.11111111111103" y="969.0" />
+      <point x="166.25" y="969.0" />
+      <point x="166.25" y="1508.0" />
+      <point x="394.6507088590437" y="1508.0" />
+      <point x="-66.0" y="-61.5" />
+    </edge>
+    <edge source="view.MainMenu" target="view.AllPokemons">
+      <point x="25.85714285714289" y="-50.0" />
+      <point x="685.4362034570377" y="1338.0" />
+      <point x="735.75" y="1338.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="test.AllRequestsThreadTest" target="model.AllRequestsThread">
+      <point x="44.25" y="-15.0" />
+      <point x="897.0714285714286" y="1731.0" />
+      <point x="864.7253417878429" y="1731.0" />
+      <point x="-70.33333333333333" y="61.5" />
+    </edge>
+    <edge source="view.MainMenu" target="view.TrainersList">
+      <point x="-77.57142857142856" y="-50.0" />
+      <point x="582.0076320284662" y="1358.0" />
+      <point x="368.58333333333337" y="1358.0" />
+      <point x="51.33333333333337" y="38.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.44999999999999996" x="620.0" y="610.0000000000001" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+
