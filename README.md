@@ -162,7 +162,7 @@ Expanda diretório "lib" clicando na setinha, clique com o botão direito sobre 
 ![alt](readme_images/erro2.png)
 
 
-Se ainda assim os erros persistirem, baixe o zip do programa AQUI, descompacte na pasta que criamos e vá para o tópico "Como utilizar".
+Se ainda assim os erros persistirem, baixe o zip do programa <a href=“https://unbbr-my.sharepoint.com/:f:/g/personal/pedroigor_aluno_unb_br/EtjqTzagbsFJrmq_qU76V-0BX0wU-6IAzPuaNsZebq9kKA?e=tcZG9y">AQUI</a>, descompacte na pasta que criamos e vá para o tópico "Como utilizar".
 
 ### Bugs:
 
