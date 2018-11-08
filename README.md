@@ -19,10 +19,10 @@ Como utilizar?
 - Uma conexão com a internet.
 - O Ambiente Integrado de Desenvolvimento (IDE) Idea Intellij da JetBrains. Você pode tentar executar em outra
 IDE porém  há grande possibilidade de erros, pois foram encontrados previamente pelo desenvolvedor.
-	Você pode instalar a Idea Intellij clicando [AQUI](“https://www.jetbrains.com/idea/“). É possível utilizar uma conta premium gratuitamente entrando
+	Você pode instalar a Idea Intellij por meio desse link: https://www.jetbrains.com/idea/. É possível utilizar uma conta premium gratuitamente entrando
 com o e-mail de uma Universidade.
 - Um terminal (Linux e MacOS) ou o cmd (Windows).
-- Ter a ferramenta de controle de versão GIT mais atual instalada. Você pode instalar clicando [AQUI](“https://git-scm.com/downloads“).
+- Ter a ferramenta de controle de versão GIT mais atual instalada. Você pode instalar por meio desse link: https://git-scm.com/downloads
 
 ### Como instalar (Linux e MacOS):
 Abra o terminal e digite
@@ -162,7 +162,9 @@ Expanda diretório "lib" clicando na setinha, clique com o botão direito sobre 
 ![alt](readme_images/erro2.png)
 
 
-Se ainda assim os erros persistirem, baixe o zip do programa [AQUI](“https://unbbr-my.sharepoint.com/:f:/g/personal/pedroigor_aluno_unb_br/EtjqTzagbsFJrmq_qU76V-0BX0wU-6IAzPuaNsZebq9kKA?e=tcZG9y“), descompacte na pasta que criamos e vá para o tópico "Como utilizar".
+Se ainda assim os erros persistirem, baixe o zip do programa aqui: 
+https://unbbr-my.sharepoint.com/:f:/g/personal/pedroigor_aluno_unb_br/EtjqTzagbsFJrmq_qU76V-0BX0wU-6IAzPuaNsZebq9kKA?e=tcZG9y
+Descompacte na pasta que criamos e vá para o tópico "Como utilizar".
 
 ### Bugs:
 
